@@ -948,13 +948,14 @@ export const simulasiPaket1 = [
 
   // ========================
   // SEKSI 3 - MEMBACA (40 SOAL)
-  // Berdasarkan poster undangan akikah
+  // 8 Poster x 5 Soal = 40 Soal
   // ========================
 
+  // POSTER 1 - Undangan Akikah (5 soal)
   {
     id: "P1-S3-001",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
+    readingImagePath: "/images/simulasi1/poster-akikah.png",
     question: "Siapa nama bayi yang diakikahi?",
     options: [
       "Bunga",
@@ -968,7 +969,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-002",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
+    readingImagePath: "/images/simulasi1/poster-akikah.png",
     question: "Kapan bayi tersebut lahir?",
     options: [
       "16 September 2024",
@@ -982,7 +983,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-003",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
+    readingImagePath: "/images/simulasi1/poster-akikah.png",
     question: "Pada hari apa acara akikah dilaksanakan?",
     options: [
       "Sabtu",
@@ -991,525 +992,538 @@ export const simulasiPaket1 = [
       "Jumat"
     ],
     correct: "Minggu",
-    explanation: "Acara pada hari Minggu, 23 Oktober 2024."
+    explanation: "Acara dilaksanakan pada hari Minggu, 23 Oktober 2024."
   },
   {
     id: "P1-S3-004",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Pukul berapa acara dimulai?",
+    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    question: "Di kecamatan mana acara tersebut dilaksanakan?",
     options: [
-      "08.00",
-      "09.00",
-      "10.00",
-      "11.00"
-    ],
-    correct: "09.00",
-    explanation: "Waktu acara: pukul 09.00 hingga selesai."
-  },
-  {
-    id: "P1-S3-005",
-    section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Di jalan apa acara tersebut dilaksanakan?",
-    options: [
-      "Jalan Baru",
-      "Jalan Pasar",
-      "Jalan Asoka",
-      "Jalan Seroja"
-    ],
-    correct: "Jalan Asoka",
-    explanation: "Tempat: Jalan Asoka, RT 005, RW 03."
-  },
-  {
-    id: "P1-S3-006",
-    section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Apa tujuan acara ini?",
-    options: [
-      "Syukuran kelahiran",
-      "Akikah",
-      "Ulang tahun",
-      "Pernikahan"
-    ],
-    correct: "Akikah",
-    explanation: "Acara adalah syukuran akikah."
-  },
-  {
-    id: "P1-S3-007",
-    section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Di kelurahan mana acara dilaksanakan?",
-    options: [
-      "Kelurahan Pasar Baru",
-      "Kelurahan Asoka",
-      "Kelurahan Seroja",
-      "Kelurahan Pasar"
-    ],
-    correct: "Kelurahan Pasar Baru",
-    explanation: "Alamat lengkap menyebutkan Kelurahan Pasar Baru."
-  },
-  {
-    id: "P1-S3-008",
-    section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Di kecamatan apa acara dilaksanakan?",
-    options: [
-      "Kecamatan Asoka",
       "Kecamatan Pasar Baru",
+      "Kecamatan Asoka",
       "Kecamatan Seroja",
       "Kecamatan Tangerang"
     ],
     correct: "Kecamatan Seroja",
-    explanation: "Kecamatan tertulis: Seroja."
+    explanation: "Alamat lengkap: Kecamatan Seroja, Tangerang, Banten."
+  },
+  {
+    id: "P1-S3-005",
+    section: "membaca",
+    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    question: "Pukul berapa acara dimulai?",
+    options: [
+      "08.00 WIB",
+      "09.00 WIB",
+      "10.00 WIB",
+      "11.00 WIB"
+    ],
+    correct: "09.00 WIB",
+    explanation: "Waktu acara dimulai pukul 09.00 hingga selesai."
+  },
+
+  // POSTER 2 - Seminar Pendidikan (5 soal)
+  {
+    id: "P1-S3-006",
+    section: "membaca",
+    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    question: "Apa tema seminar yang akan dilaksanakan?",
+    options: [
+      "Meningkatkan Kualitas Pendidikan",
+      "Meningkatkan Literasi Digital di Era Modern",
+      "Teknologi dalam Pendidikan",
+      "Pendidikan Karakter"
+    ],
+    correct: "Meningkatkan Literasi Digital di Era Modern",
+    explanation: "Tema seminar adalah 'Meningkatkan Literasi Digital di Era Modern'."
+  },
+  {
+    id: "P1-S3-007",
+    section: "membaca",
+    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    question: "Siapa pembicara dalam seminar tersebut?",
+    options: [
+      "Prof. Ahmad Santoso, M.Pd.",
+      "Dr. Ahmad Santoso, M.Pd.",
+      "Ahmad Santoso, S.Pd.",
+      "Drs. Ahmad Santoso"
+    ],
+    correct: "Dr. Ahmad Santoso, M.Pd.",
+    explanation: "Pembicara: Dr. Ahmad Santoso, M.Pd."
+  },
+  {
+    id: "P1-S3-008",
+    section: "membaca",
+    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    question: "Kapan seminar akan dilaksanakan?",
+    options: [
+      "Jumat, 15 Januari 2025",
+      "Sabtu, 15 Januari 2025",
+      "Minggu, 15 Januari 2025",
+      "Senin, 15 Januari 2025"
+    ],
+    correct: "Sabtu, 15 Januari 2025",
+    explanation: "Seminar dilaksanakan pada hari Sabtu, 15 Januari 2025."
   },
   {
     id: "P1-S3-009",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Di kota/kabupaten apa acara dilaksanakan?",
+    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    question: "Berapa kuota peserta seminar?",
     options: [
-      "Jakarta",
-      "Tangerang",
-      "Bekasi",
-      "Bogor"
+      "100 peserta",
+      "150 peserta",
+      "200 peserta",
+      "250 peserta"
     ],
-    correct: "Tangerang",
-    explanation: "Lokasi: Tangerang, Banten."
+    correct: "200 peserta",
+    explanation: "Kuota peserta dibatasi 200 orang."
   },
   {
     id: "P1-S3-010",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/undangan-akikah.png",
-    question: "Di provinsi apa acara dilaksanakan?",
+    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    question: "Berapa biaya untuk mengikuti seminar?",
     options: [
-      "DKI Jakarta",
-      "Jawa Barat",
-      "Banten",
-      "Jawa Tengah"
+      "Rp 50.000",
+      "Rp 100.000",
+      "Gratis (wajib daftar)",
+      "Rp 25.000"
     ],
-    correct: "Banten",
-    explanation: "Provinsi: Banten."
+    correct: "Gratis (wajib daftar)",
+    explanation: "Seminar gratis tetapi peserta wajib mendaftar terlebih dahulu."
   },
+
+  // POSTER 3 - Lomba Menulis (5 soal)
   {
     id: "P1-S3-011",
     section: "membaca",
-    readingText: "Pendidikan merupakan salah satu aspek penting dalam pembangunan suatu bangsa. Melalui pendidikan, generasi muda dapat mengembangkan potensi diri dan berkontribusi bagi kemajuan negara.",
-    question: "Apa topik utama dari teks tersebut?",
+    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    question: "Apa tema lomba menulis cerpen?",
     options: [
-      "Pembangunan ekonomi",
-      "Pentingnya pendidikan",
-      "Generasi muda",
-      "Kemajuan teknologi"
+      "Nusantara dalam Cerita",
+      "Indonesia dalam Cerita",
+      "Budaya Indonesia",
+      "Keindahan Indonesia"
     ],
-    correct: "Pentingnya pendidikan",
-    explanation: "Teks membahas pentingnya pendidikan dalam pembangunan bangsa."
+    correct: "Indonesia dalam Cerita",
+    explanation: "Tema lomba adalah 'Indonesia dalam Cerita'."
   },
   {
     id: "P1-S3-012",
     section: "membaca",
-    readingText: "Sampah plastik menjadi masalah serius bagi lingkungan karena sulit terurai. Diperlukan kesadaran masyarakat untuk mengurangi penggunaan plastik sekali pakai.",
-    question: "Apa solusi yang disarankan dalam teks?",
+    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    question: "Berapa hadiah untuk juara pertama?",
     options: [
-      "Membakar sampah plastik",
-      "Mengurangi penggunaan plastik sekali pakai",
-      "Membuat plastik lebih banyak",
-      "Membuang plastik ke laut"
+      "Rp 3.000.000",
+      "Rp 4.000.000",
+      "Rp 5.000.000",
+      "Rp 6.000.000"
     ],
-    correct: "Mengurangi penggunaan plastik sekali pakai",
-    explanation: "Teks menyarankan untuk mengurangi penggunaan plastik sekali pakai."
+    correct: "Rp 5.000.000",
+    explanation: "Hadiah juara 1 adalah Rp 5.000.000."
   },
   {
     id: "P1-S3-013",
     section: "membaca",
-    readingText: "Olahraga teratur dapat meningkatkan kesehatan jantung, memperkuat otot, dan meningkatkan sistem kekebalan tubuh. Disarankan untuk berolahraga minimal 30 menit setiap hari.",
-    question: "Berapa lama waktu olahraga yang disarankan per hari?",
+    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    question: "Kapan batas akhir pendaftaran lomba?",
     options: [
-      "15 menit",
-      "30 menit",
-      "45 menit",
-      "60 menit"
+      "31 Januari 2025",
+      "28 Februari 2025",
+      "15 Maret 2025",
+      "31 Maret 2025"
     ],
-    correct: "30 menit",
-    explanation: "Teks menyebutkan minimal 30 menit setiap hari."
+    correct: "28 Februari 2025",
+    explanation: "Pendaftaran dibuka dari 1-28 Februari 2025."
   },
   {
     id: "P1-S3-014",
     section: "membaca",
-    readingText: "Indonesia memiliki lebih dari 17.000 pulau dan merupakan negara kepulauan terbesar di dunia. Keanekaragaman budaya dan bahasa menjadi kekayaan bangsa yang harus dilestarikan.",
-    question: "Berapa jumlah pulau yang dimiliki Indonesia?",
+    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    question: "Siapa penyelenggara lomba menulis ini?",
     options: [
-      "Lebih dari 10.000",
-      "Lebih dari 15.000",
-      "Lebih dari 17.000",
-      "Lebih dari 20.000"
+      "Kementerian Pendidikan",
+      "Komunitas Sastra Indonesia",
+      "Perpustakaan Nasional",
+      "Balai Bahasa"
     ],
-    correct: "Lebih dari 17.000",
-    explanation: "Teks menyebutkan Indonesia memiliki lebih dari 17.000 pulau."
+    correct: "Komunitas Sastra Indonesia",
+    explanation: "Lomba diselenggarakan oleh Komunitas Sastra Indonesia."
   },
   {
     id: "P1-S3-015",
     section: "membaca",
-    readingText: "Membaca buku dapat memperluas wawasan dan meningkatkan kemampuan berpikir kritis. Kebiasaan membaca sebaiknya ditanamkan sejak usia dini.",
-    question: "Kapan kebiasaan membaca sebaiknya ditanamkan?",
+    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    question: "Kapan pengumuman pemenang lomba?",
     options: [
-      "Sejak remaja",
-      "Sejak dewasa",
-      "Sejak usia dini",
-      "Sejak kuliah"
+      "1 Maret 2025",
+      "10 Maret 2025",
+      "15 Maret 2025",
+      "31 Maret 2025"
     ],
-    correct: "Sejak usia dini",
-    explanation: "Teks menyatakan kebiasaan membaca sebaiknya ditanamkan sejak usia dini."
+    correct: "15 Maret 2025",
+    explanation: "Pengumuman pemenang pada tanggal 15 Maret 2025."
   },
+
+  // POSTER 4 - Donor Darah (5 soal)
   {
     id: "P1-S3-016",
     section: "membaca",
-    readingText: "Teknologi informasi telah mengubah cara manusia berkomunikasi. Media sosial memungkinkan orang untuk terhubung dengan siapa saja di berbagai belahan dunia.",
-    question: "Apa dampak teknologi informasi menurut teks?",
+    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    question: "Siapa penyelenggara kegiatan donor darah?",
     options: [
-      "Mengurangi komunikasi",
-      "Mengubah cara berkomunikasi",
-      "Menghilangkan media sosial",
-      "Membatasi koneksi"
+      "PMI Kota Jakarta",
+      "PT Maju Bersama",
+      "PMI Kota Jakarta dan PT Maju Bersama",
+      "Kementerian Kesehatan"
     ],
-    correct: "Mengubah cara berkomunikasi",
-    explanation: "Teks menyebutkan teknologi informasi mengubah cara manusia berkomunikasi."
+    correct: "PMI Kota Jakarta dan PT Maju Bersama",
+    explanation: "Donor darah diselenggarakan oleh PMI Kota Jakarta bekerjasama dengan PT Maju Bersama."
   },
   {
     id: "P1-S3-017",
     section: "membaca",
-    readingText: "Pola makan sehat harus mencakup karbohidrat, protein, lemak sehat, vitamin, dan mineral dalam jumlah seimbang. Hindari makanan yang mengandung gula berlebihan.",
-    question: "Apa yang harus dihindari dalam pola makan sehat?",
+    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    question: "Berapa berat badan minimal untuk donor darah?",
     options: [
-      "Protein",
-      "Vitamin",
-      "Gula berlebihan",
-      "Karbohidrat"
+      "40 kg",
+      "45 kg",
+      "50 kg",
+      "55 kg"
     ],
-    correct: "Gula berlebihan",
-    explanation: "Teks menyarankan untuk menghindari makanan dengan gula berlebihan."
+    correct: "45 kg",
+    explanation: "Syarat donor darah: berat badan minimal 45 kg."
   },
   {
     id: "P1-S3-018",
     section: "membaca",
-    readingText: "Hutan hujan tropis Indonesia adalah rumah bagi ribuan spesies flora dan fauna. Pelestarian hutan sangat penting untuk menjaga keseimbangan ekosistem.",
-    question: "Mengapa pelestarian hutan penting?",
+    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    question: "Kapan kegiatan donor darah dilaksanakan?",
     options: [
-      "Untuk industri kayu",
-      "Untuk menjaga keseimbangan ekosistem",
-      "Untuk pembangunan kota",
-      "Untuk perkebunan"
+      "Kamis, 20 Februari 2025",
+      "Jumat, 20 Februari 2025",
+      "Sabtu, 20 Februari 2025",
+      "Minggu, 20 Februari 2025"
     ],
-    correct: "Untuk menjaga keseimbangan ekosistem",
-    explanation: "Teks menyatakan pelestarian hutan penting untuk keseimbangan ekosistem."
+    correct: "Jumat, 20 Februari 2025",
+    explanation: "Kegiatan dilaksanakan pada hari Jumat, 20 Februari 2025."
   },
   {
     id: "P1-S3-019",
     section: "membaca",
-    readingText: "Pancasila adalah dasar negara Indonesia yang terdiri dari lima sila. Nilai-nilai Pancasila harus diamalkan dalam kehidupan sehari-hari.",
-    question: "Berapa jumlah sila dalam Pancasila?",
+    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    question: "Apa saja fasilitas yang diberikan untuk pendonor?",
     options: [
-      "Tiga sila",
-      "Empat sila",
-      "Lima sila",
-      "Enam sila"
+      "Snack dan sertifikat",
+      "Makan siang dan sertifikat",
+      "Snack, makan siang, dan sertifikat",
+      "Hanya sertifikat"
     ],
-    correct: "Lima sila",
-    explanation: "Pancasila terdiri dari lima sila."
+    correct: "Snack, makan siang, dan sertifikat",
+    explanation: "Pendonor mendapat snack, makan siang, dan sertifikat."
   },
   {
     id: "P1-S3-020",
     section: "membaca",
-    readingText: "Air bersih adalah kebutuhan dasar manusia. Sayangnya, masih banyak daerah di Indonesia yang belum memiliki akses air bersih yang memadai.",
-    question: "Apa masalah yang dihadapi beberapa daerah di Indonesia?",
+    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    question: "Berapa rentang usia yang diperbolehkan untuk donor darah?",
     options: [
-      "Kelebihan air",
-      "Tidak ada sungai",
-      "Belum memiliki akses air bersih memadai",
-      "Terlalu banyak hujan"
+      "15-55 tahun",
+      "17-60 tahun",
+      "18-65 tahun",
+      "20-50 tahun"
     ],
-    correct: "Belum memiliki akses air bersih memadai",
-    explanation: "Teks menyebutkan masih banyak daerah yang belum memiliki akses air bersih memadai."
+    correct: "17-60 tahun",
+    explanation: "Usia yang diperbolehkan untuk donor darah adalah 17-60 tahun."
   },
+
+  // POSTER 5 - Pameran Seni (5 soal)
   {
     id: "P1-S3-021",
     section: "membaca",
-    readingText: "Energi terbarukan seperti tenaga surya dan angin menjadi alternatif ramah lingkungan untuk menggantikan energi fosil yang semakin menipis.",
-    question: "Apa contoh energi terbarukan dalam teks?",
+    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    question: "Apa judul pameran seni yang diadakan?",
     options: [
-      "Batu bara dan minyak",
-      "Tenaga surya dan angin",
-      "Gas alam",
-      "Bensin dan solar"
+      "Seni Nusantara",
+      "Warna-Warni Nusantara",
+      "Budaya Indonesia",
+      "Karya Anak Bangsa"
     ],
-    correct: "Tenaga surya dan angin",
-    explanation: "Teks menyebutkan tenaga surya dan angin sebagai energi terbarukan."
+    correct: "Warna-Warni Nusantara",
+    explanation: "Judul pameran adalah 'Warna-Warni Nusantara'."
   },
   {
     id: "P1-S3-022",
     section: "membaca",
-    readingText: "Gotong royong adalah budaya Indonesia yang mencerminkan semangat kebersamaan. Tradisi ini harus terus dilestarikan di tengah perkembangan zaman.",
-    question: "Apa yang dimaksud dengan gotong royong?",
+    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    question: "Berapa jumlah seniman yang berpartisipasi?",
     options: [
-      "Bekerja sendiri",
-      "Semangat kebersamaan",
-      "Kompetisi",
-      "Individualisme"
+      "10 seniman",
+      "15 seniman",
+      "20 seniman",
+      "25 seniman"
     ],
-    correct: "Semangat kebersamaan",
-    explanation: "Gotong royong mencerminkan semangat kebersamaan."
+    correct: "15 seniman",
+    explanation: "Pameran menampilkan karya dari 15 seniman Indonesia."
   },
   {
     id: "P1-S3-023",
     section: "membaca",
-    readingText: "Kopi adalah salah satu komoditas ekspor unggulan Indonesia. Berbagai daerah memiliki jenis kopi khas dengan cita rasa yang berbeda.",
-    question: "Apa status kopi bagi Indonesia?",
+    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    question: "Kapan acara pembukaan pameran?",
     options: [
-      "Produk impor",
-      "Komoditas ekspor unggulan",
-      "Barang langka",
-      "Produk terlarang"
+      "Rabu, 5 Maret 2025 pukul 18.00 WIB",
+      "Kamis, 5 Maret 2025 pukul 18.00 WIB",
+      "Jumat, 5 Maret 2025 pukul 18.00 WIB",
+      "Sabtu, 5 Maret 2025 pukul 18.00 WIB"
     ],
-    correct: "Komoditas ekspor unggulan",
-    explanation: "Kopi adalah komoditas ekspor unggulan Indonesia."
+    correct: "Kamis, 5 Maret 2025 pukul 18.00 WIB",
+    explanation: "Pembukaan dilaksanakan pada Kamis, 5 Maret 2025 pukul 18.00 WIB."
   },
   {
     id: "P1-S3-024",
     section: "membaca",
-    readingText: "Literasi digital penting dikuasai di era modern ini. Kemampuan memilah informasi yang benar dari yang salah menjadi keterampilan yang sangat dibutuhkan.",
-    question: "Mengapa literasi digital penting?",
+    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    question: "Pada hari apa galeri tutup?",
     options: [
-      "Untuk bermain game",
-      "Untuk memilah informasi benar dan salah",
-      "Untuk belanja online",
-      "Untuk media sosial"
+      "Minggu",
+      "Senin",
+      "Sabtu",
+      "Jumat"
     ],
-    correct: "Untuk memilah informasi benar dan salah",
-    explanation: "Literasi digital penting untuk memilah informasi yang benar dari yang salah."
+    correct: "Senin",
+    explanation: "Galeri buka Selasa-Minggu, tutup pada hari Senin."
   },
   {
     id: "P1-S3-025",
     section: "membaca",
-    readingText: "Batik adalah warisan budaya Indonesia yang telah diakui UNESCO. Setiap motif batik memiliki makna dan filosofi tersendiri.",
-    question: "Siapa yang mengakui batik sebagai warisan budaya?",
+    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    question: "Berapa harga tiket masuk pameran?",
     options: [
-      "ASEAN",
-      "UNESCO",
-      "PBB",
-      "UNICEF"
+      "Rp 10.000",
+      "Rp 25.000",
+      "Rp 50.000",
+      "Gratis"
     ],
-    correct: "UNESCO",
-    explanation: "UNESCO mengakui batik sebagai warisan budaya Indonesia."
+    correct: "Gratis",
+    explanation: "Tiket masuk pameran gratis untuk umum."
   },
+
+  // POSTER 6 - Pengumuman Libur Sekolah (5 soal)
   {
     id: "P1-S3-026",
     section: "membaca",
-    readingText: "Vaksinasi adalah cara efektif untuk mencegah penyebaran penyakit menular. Program vaksinasi nasional bertujuan melindungi masyarakat dari berbagai penyakit berbahaya.",
-    question: "Apa tujuan vaksinasi?",
+    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    question: "Sekolah mana yang mengeluarkan pengumuman?",
     options: [
-      "Mengobati penyakit",
-      "Mencegah penyebaran penyakit menular",
-      "Mempercepat kesembuhan",
-      "Menambah vitamin"
+      "SMA Negeri 3 Bandung",
+      "SMA Negeri 5 Bandung",
+      "SMA Negeri 7 Bandung",
+      "SMA Negeri 1 Bandung"
     ],
-    correct: "Mencegah penyebaran penyakit menular",
-    explanation: "Vaksinasi bertujuan mencegah penyebaran penyakit menular."
+    correct: "SMA Negeri 5 Bandung",
+    explanation: "Pengumuman dari SMA Negeri 5 Bandung."
   },
   {
     id: "P1-S3-027",
     section: "membaca",
-    readingText: "Kemacetan lalu lintas di kota besar menjadi masalah yang memerlukan solusi komprehensif, seperti pengembangan transportasi umum dan pengaturan jam kerja yang fleksibel.",
-    question: "Apa solusi untuk kemacetan menurut teks?",
+    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    question: "Kapan siswa masuk kembali setelah libur?",
     options: [
-      "Menambah jalan raya",
-      "Pengembangan transportasi umum",
-      "Melarang kendaraan pribadi",
-      "Mengurangi populasi"
+      "Senin, 10 Juli 2025",
+      "Senin, 13 Juli 2025",
+      "Senin, 15 Juli 2025",
+      "Senin, 20 Juli 2025"
     ],
-    correct: "Pengembangan transportasi umum",
-    explanation: "Salah satu solusi adalah pengembangan transportasi umum."
+    correct: "Senin, 13 Juli 2025",
+    explanation: "Siswa masuk kembali pada Senin, 13 Juli 2025."
   },
   {
     id: "P1-S3-028",
     section: "membaca",
-    readingText: "Bahasa Indonesia memiliki peran penting sebagai alat pemersatu bangsa. Penggunaan bahasa Indonesia yang baik dan benar harus terus ditingkatkan.",
-    question: "Apa peran bahasa Indonesia?",
+    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    question: "Kapan pengambilan raport dilaksanakan?",
     options: [
-      "Alat komunikasi internasional",
-      "Alat pemersatu bangsa",
-      "Bahasa daerah",
-      "Bahasa asing"
+      "Jumat, 21 Juni 2025",
+      "Sabtu, 21 Juni 2025",
+      "Minggu, 21 Juni 2025",
+      "Senin, 21 Juni 2025"
     ],
-    correct: "Alat pemersatu bangsa",
-    explanation: "Bahasa Indonesia berperan sebagai alat pemersatu bangsa."
+    correct: "Sabtu, 21 Juni 2025",
+    explanation: "Pengambilan raport pada Sabtu, 21 Juni 2025 pukul 08.00-11.00."
   },
   {
     id: "P1-S3-029",
     section: "membaca",
-    readingText: "Stunting adalah kondisi gagal tumbuh pada anak akibat kekurangan gizi kronis. Pencegahan stunting dimulai sejak masa kehamilan dengan asupan nutrisi yang cukup.",
-    question: "Kapan pencegahan stunting dimulai?",
+    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    question: "Berapa lama periode libur semester?",
     options: [
-      "Sejak balita",
-      "Sejak remaja",
-      "Sejak masa kehamilan",
-      "Sejak dewasa"
+      "15 hari",
+      "18 hari",
+      "19 hari",
+      "20 hari"
     ],
-    correct: "Sejak masa kehamilan",
-    explanation: "Pencegahan stunting dimulai sejak masa kehamilan."
+    correct: "19 hari",
+    explanation: "Libur dari 24 Juni - 12 Juli 2025 (19 hari)."
   },
   {
     id: "P1-S3-030",
     section: "membaca",
-    readingText: "Pariwisata adalah sektor ekonomi penting di Indonesia. Keindahan alam dan kekayaan budaya menjadi daya tarik wisatawan mancanegara.",
-    question: "Apa yang menjadi daya tarik wisatawan?",
+    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    question: "Apa yang wajib dilakukan siswa saat pengambilan raport?",
     options: [
-      "Teknologi modern",
-      "Gedung pencakar langit",
-      "Keindahan alam dan kekayaan budaya",
-      "Pusat perbelanjaan"
+      "Membawa orang tua",
+      "Hadir mengambil raport",
+      "Membayar SPP",
+      "Mengumpulkan tugas"
     ],
-    correct: "Keindahan alam dan kekayaan budaya",
-    explanation: "Keindahan alam dan kekayaan budaya menjadi daya tarik wisatawan."
+    correct: "Hadir mengambil raport",
+    explanation: "Siswa wajib hadir saat pengambilan raport."
   },
+
+  // POSTER 7 - Lowongan Kerja (5 soal)
   {
     id: "P1-S3-031",
     section: "membaca",
-    readingText: "Pangan lokal memiliki nilai gizi yang tidak kalah dengan produk impor. Mengonsumsi pangan lokal juga mendukung petani dalam negeri dan menjaga ketahanan pangan nasional.",
-    question: "Apa manfaat mengonsumsi pangan lokal?",
+    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    question: "Perusahaan apa yang membuka lowongan kerja?",
     options: [
-      "Lebih mahal",
-      "Mendukung petani dalam negeri",
-      "Lebih sulit didapat",
-      "Tidak bergizi"
+      "PT Teknologi Digital Indonesia",
+      "PT Digital Teknologi Indonesia",
+      "PT Indonesia Digital",
+      "PT Digital Indonesia"
     ],
-    correct: "Mendukung petani dalam negeri",
-    explanation: "Mengonsumsi pangan lokal mendukung petani dalam negeri."
+    correct: "PT Digital Teknologi Indonesia",
+    explanation: "Lowongan dibuka oleh PT Digital Teknologi Indonesia."
   },
   {
     id: "P1-S3-032",
     section: "membaca",
-    readingText: "Perubahan iklim menyebabkan cuaca ekstrem yang semakin sering terjadi. Upaya mitigasi dan adaptasi perlu dilakukan untuk mengurangi dampak negatifnya.",
-    question: "Apa dampak perubahan iklim?",
+    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    question: "Berapa posisi Web Developer yang dibutuhkan?",
     options: [
-      "Cuaca yang stabil",
-      "Cuaca ekstrem yang semakin sering",
-      "Suhu yang dingin",
-      "Tidak ada dampak"
+      "1 orang",
+      "2 orang",
+      "3 orang",
+      "4 orang"
     ],
-    correct: "Cuaca ekstrem yang semakin sering",
-    explanation: "Perubahan iklim menyebabkan cuaca ekstrem yang semakin sering terjadi."
+    correct: "2 orang",
+    explanation: "Dibutuhkan 2 orang Web Developer."
   },
   {
     id: "P1-S3-033",
     section: "membaca",
-    readingText: "Kewirausahaan dapat menjadi solusi untuk mengurangi pengangguran. Pemerintah mendukung UMKM melalui berbagai program pelatihan dan akses permodalan.",
-    question: "Bagaimana pemerintah mendukung UMKM?",
+    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    question: "Berapa pengalaman minimal untuk posisi Web Developer?",
     options: [
-      "Memberikan larangan",
-      "Program pelatihan dan akses permodalan",
-      "Menaikkan pajak",
-      "Mengurangi bantuan"
+      "1 tahun",
+      "2 tahun",
+      "3 tahun",
+      "Tidak ada pengalaman"
     ],
-    correct: "Program pelatihan dan akses permodalan",
-    explanation: "Pemerintah mendukung melalui program pelatihan dan akses permodalan."
+    correct: "2 tahun",
+    explanation: "Web Developer memerlukan pengalaman minimal 2 tahun."
   },
   {
     id: "P1-S3-034",
     section: "membaca",
-    readingText: "Musik tradisional Indonesia sangat beragam, mulai dari gamelan Jawa, angklung Sunda, hingga sasando NTT. Pelestarian musik tradisional penting untuk menjaga identitas budaya.",
-    question: "Mengapa musik tradisional perlu dilestarikan?",
+    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    question: "Kemana CV dan portofolio harus dikirim?",
     options: [
-      "Untuk hiburan saja",
-      "Untuk menjaga identitas budaya",
-      "Untuk kompetisi",
-      "Untuk ekspor"
+      "recruitment@digitaltek.com",
+      "recruitment@digitaltek.co.id",
+      "hr@digitaltek.co.id",
+      "career@digitaltek.co.id"
     ],
-    correct: "Untuk menjaga identitas budaya",
-    explanation: "Pelestarian musik tradisional penting untuk menjaga identitas budaya."
+    correct: "recruitment@digitaltek.co.id",
+    explanation: "CV dikirim ke recruitment@digitaltek.co.id."
   },
   {
     id: "P1-S3-035",
     section: "membaca",
-    readingText: "Kerja keras dan disiplin adalah kunci kesuksesan. Tanpa kedua hal tersebut, mencapai tujuan akan menjadi sulit.",
-    question: "Apa kunci kesuksesan menurut teks?",
+    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    question: "Kapan batas akhir pengiriman lamaran?",
     options: [
-      "Keberuntungan",
-      "Kerja keras dan disiplin",
-      "Kekayaan",
-      "Koneksi"
+      "28 Januari 2025",
+      "28 Februari 2025",
+      "28 Maret 2025",
+      "28 April 2025"
     ],
-    correct: "Kerja keras dan disiplin",
-    explanation: "Kerja keras dan disiplin adalah kunci kesuksesan."
+    correct: "28 Februari 2025",
+    explanation: "Deadline pengiriman lamaran adalah 28 Februari 2025."
   },
+
+  // POSTER 8 - Jadwal Posyandu (5 soal)
   {
     id: "P1-S3-036",
     section: "membaca",
-    readingText: "Perpustakaan adalah sumber ilmu pengetahuan yang mudah diakses. Pemanfaatan perpustakaan perlu ditingkatkan untuk mendukung budaya literasi.",
-    question: "Apa fungsi perpustakaan?",
+    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    question: "Apa nama posyandu yang tertera pada poster?",
     options: [
-      "Tempat bermain",
-      "Sumber ilmu pengetahuan",
-      "Tempat istirahat",
-      "Ruang rapat"
+      "Posyandu Mawar 5",
+      "Posyandu Melati 5",
+      "Posyandu Anggrek 5",
+      "Posyandu Dahlia 5"
     ],
-    correct: "Sumber ilmu pengetahuan",
-    explanation: "Perpustakaan adalah sumber ilmu pengetahuan."
+    correct: "Posyandu Melati 5",
+    explanation: "Nama posyandu adalah Posyandu Melati 5."
   },
   {
     id: "P1-S3-037",
     section: "membaca",
-    readingText: "Olahraga renang bermanfaat untuk kesehatan jantung dan paru-paru. Renang juga melatih seluruh otot tubuh tanpa membebani persendian.",
-    question: "Apa manfaat olahraga renang?",
+    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    question: "Kegiatan apa yang dilaksanakan pada minggu ke-2 Februari?",
     options: [
-      "Hanya untuk hiburan",
-      "Kesehatan jantung dan paru-paru",
-      "Menambah berat badan",
-      "Merusak otot"
+      "Penimbangan balita",
+      "Imunisasi campak",
+      "Imunisasi DPT",
+      "Pemeriksaan ibu hamil"
     ],
-    correct: "Kesehatan jantung dan paru-paru",
-    explanation: "Renang bermanfaat untuk kesehatan jantung dan paru-paru."
+    correct: "Imunisasi campak",
+    explanation: "Minggu ke-2 (12 Feb): Imunisasi campak untuk usia 9-12 bulan."
   },
   {
     id: "P1-S3-038",
     section: "membaca",
-    readingText: "Seni lukis Indonesia memiliki ciri khas yang membedakannya dengan seni lukis negara lain. Pelukis Indonesia terkenal dengan karya yang kaya akan filosofi dan makna.",
-    question: "Apa ciri khas seni lukis Indonesia?",
+    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    question: "Untuk usia berapa imunisasi DPT diberikan?",
     options: [
-      "Tidak bermakna",
-      "Kaya akan filosofi dan makna",
-      "Hanya untuk dekorasi",
-      "Meniru negara lain"
+      "0-2 bulan",
+      "2-4 bulan",
+      "4-6 bulan",
+      "9-12 bulan"
     ],
-    correct: "Kaya akan filosofi dan makna",
-    explanation: "Seni lukis Indonesia kaya akan filosofi dan makna."
+    correct: "2-4 bulan",
+    explanation: "Imunisasi DPT diberikan untuk usia 2-4 bulan."
   },
   {
     id: "P1-S3-039",
     section: "membaca",
-    readingText: "Sampah organik dapat diolah menjadi kompos yang bermanfaat untuk kesuburan tanah. Pengomposan adalah salah satu cara mengurangi volume sampah.",
-    question: "Apa manfaat kompos?",
+    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    question: "Apa yang harus dibawa saat datang ke posyandu?",
     options: [
-      "Mencemari tanah",
-      "Untuk kesuburan tanah",
-      "Menambah sampah",
-      "Merusak lingkungan"
+      "KTP",
+      "KK (Kartu Keluarga)",
+      "KMS (Kartu Menuju Sehat)",
+      "Buku nikah"
     ],
-    correct: "Untuk kesuburan tanah",
-    explanation: "Kompos bermanfaat untuk kesuburan tanah."
+    correct: "KMS (Kartu Menuju Sehat)",
+    explanation: "Warga harus membawa KMS (Kartu Menuju Sehat)."
   },
   {
     id: "P1-S3-040",
     section: "membaca",
-    readingText: "Menghormati orang tua adalah nilai luhur dalam budaya Indonesia. Sikap hormat mencerminkan karakter yang baik dan menjadi teladan bagi generasi selanjutnya.",
-    question: "Apa yang dicerminkan oleh sikap hormat kepada orang tua?",
+    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    question: "Pukul berapa kegiatan posyandu dimulai?",
     options: [
-      "Ketakutan",
-      "Karakter yang baik",
-      "Kelemahan",
-      "Keterpaksaan"
+      "08.00 WIB",
+      "09.00 WIB",
+      "10.00 WIB",
+      "11.00 WIB"
     ],
-    correct: "Karakter yang baik",
-    explanation: "Sikap hormat mencerminkan karakter yang baik."
+    correct: "09.00 WIB",
+    explanation: "Kegiatan posyandu dimulai pukul 09.00-12.00 WIB."
   }
 ];
-
