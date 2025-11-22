@@ -1,19 +1,12 @@
-export interface Soal {
-    id: number;
-    pertanyaan: string;
-    seksi: 'membaca';
-    tingkat_kesulitan: 'mudah';
-    opsi: string[];
-    jawaban_benar: string;
-    pembahasan: string;
-}
+import { Soal } from '@/lib/types';
 
 export const soalData: Soal[] = [
     {
         id: 1,
         pertanyaan: "tes",
-        seksi: "membaca",
+        seksi: "seksi-tiga-membaca",
         tingkat_kesulitan: "mudah",
+        audio_url: "tes",
         opsi: ["A. Sangat lambat", "B. Sangat cepat", "C. Cukup stabil", "D.Tidak ada informasi"],
         jawaban_benar: "B",
         pembahasan: "tes"

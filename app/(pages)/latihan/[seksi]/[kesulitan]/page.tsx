@@ -10,8 +10,6 @@ interface LatihanPageProps {
 }
 
 async function getSoalData(seksiSlug: string, kesulitanSlug: Exclude<KesulitanType, 'adaptif'>): Promise<Soal[]> {
-    const normalizedSeksi = seksiSlug.toLowerCase().replace(/ /g, '-');
-    const normalizedKesulitan = kesulitanSlug.toLowerCase();
 
     try {
         const filePath = `@/lib/latihan/${seksiSlug}/${kesulitanSlug}/latihan1.ts`;

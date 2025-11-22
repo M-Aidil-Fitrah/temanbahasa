@@ -1,4 +1,3 @@
-
 import { Soal } from '@/lib/types';
 
 export const soalData: Soal[] = [
