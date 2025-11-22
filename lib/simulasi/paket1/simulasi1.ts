@@ -9,7 +9,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-001",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-1.mp3",
     script: "A: Selamat pagi, Bu Rina. Apakah rapat bulanan sudah dijadwalkan?\nB: Sudah, Pak. Rapat akan dilaksanakan hari Kamis pukul 10 pagi di ruang rapat lantai 3.\nA: Baik. Apakah semua kepala divisi sudah dikonfirmasi?\nB: Sudah, Pak. Semua akan hadir kecuali Pak Budi yang sedang dinas luar kota.\nA: Kalau begitu, tolong siapkan notulensi untuk menggantikan beliau.",
     question: "Kapan rapat bulanan akan dilaksanakan?",
     options: [
@@ -24,7 +24,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-002",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-1.mp3",
     script: "A: Selamat pagi, Bu Rina. Apakah rapat bulanan sudah dijadwalkan?\nB: Sudah, Pak. Rapat akan dilaksanakan hari Kamis pukul 10 pagi di ruang rapat lantai 3.\nA: Baik. Apakah semua kepala divisi sudah dikonfirmasi?\nB: Sudah, Pak. Semua akan hadir kecuali Pak Budi yang sedang dinas luar kota.\nA: Kalau begitu, tolong siapkan notulensi untuk menggantikan beliau.",
     question: "Di mana rapat akan dilaksanakan?",
     options: [
@@ -39,7 +39,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-003",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-1.mp3",
     script: "A: Selamat pagi, Bu Rina. Apakah rapat bulanan sudah dijadwalkan?\nB: Sudah, Pak. Rapat akan dilaksanakan hari Kamis pukul 10 pagi di ruang rapat lantai 3.\nA: Baik. Apakah semua kepala divisi sudah dikonfirmasi?\nB: Sudah, Pak. Semua akan hadir kecuali Pak Budi yang sedang dinas luar kota.\nA: Kalau begitu, tolong siapkan notulensi untuk menggantikan beliau.",
     question: "Siapa yang tidak dapat hadir dalam rapat?",
     options: [
@@ -54,7 +54,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-004",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-1.mp3",
     script: "A: Selamat pagi, Bu Rina. Apakah rapat bulanan sudah dijadwalkan?\nB: Sudah, Pak. Rapat akan dilaksanakan hari Kamis pukul 10 pagi di ruang rapat lantai 3.\nA: Baik. Apakah semua kepala divisi sudah dikonfirmasi?\nB: Sudah, Pak. Semua akan hadir kecuali Pak Budi yang sedang dinas luar kota.\nA: Kalau begitu, tolong siapkan notulensi untuk menggantikan beliau.",
     question: "Mengapa Pak Budi tidak dapat hadir?",
     options: [
@@ -69,7 +69,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-005",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-1.mp3",
     script: "A: Selamat pagi, Bu Rina. Apakah rapat bulanan sudah dijadwalkan?\nB: Sudah, Pak. Rapat akan dilaksanakan hari Kamis pukul 10 pagi di ruang rapat lantai 3.\nA: Baik. Apakah semua kepala divisi sudah dikonfirmasi?\nB: Sudah, Pak. Semua akan hadir kecuali Pak Budi yang sedang dinas luar kota.\nA: Kalau begitu, tolong siapkan notulensi untuk menggantikan beliau.",
     question: "Apa yang diminta untuk disiapkan menggantikan Pak Budi?",
     options: [
@@ -86,7 +86,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-006",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-2.mp3",
     script: "A: Permisi, saya ingin meminjam buku tentang sejarah Indonesia.\nB: Silakan. Buku sejarah ada di rak nomor 5, bagian kiri.\nA: Berapa lama masa peminjaman bukunya?\nB: Untuk buku umum, masa peminjamannya dua minggu. Bisa diperpanjang satu kali.\nA: Apakah perlu membawa kartu anggota?\nB: Ya, kartu anggota wajib dibawa setiap meminjam buku.",
     question: "Buku apa yang ingin dipinjam pengunjung?",
     options: [
@@ -101,7 +101,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-007",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-2.mp3",
     script: "A: Permisi, saya ingin meminjam buku tentang sejarah Indonesia.\nB: Silakan. Buku sejarah ada di rak nomor 5, bagian kiri.\nA: Berapa lama masa peminjaman bukunya?\nB: Untuk buku umum, masa peminjamannya dua minggu. Bisa diperpanjang satu kali.\nA: Apakah perlu membawa kartu anggota?\nB: Ya, kartu anggota wajib dibawa setiap meminjam buku.",
     question: "Di mana letak buku sejarah?",
     options: [
@@ -116,7 +116,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-008",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-2.mp3",
     script: "A: Permisi, saya ingin meminjam buku tentang sejarah Indonesia.\nB: Silakan. Buku sejarah ada di rak nomor 5, bagian kiri.\nA: Berapa lama masa peminjaman bukunya?\nB: Untuk buku umum, masa peminjamannya dua minggu. Bisa diperpanjang satu kali.\nA: Apakah perlu membawa kartu anggota?\nB: Ya, kartu anggota wajib dibawa setiap meminjam buku.",
     question: "Berapa lama masa peminjaman buku umum?",
     options: [
@@ -131,7 +131,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-009",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-2.mp3",
     script: "A: Permisi, saya ingin meminjam buku tentang sejarah Indonesia.\nB: Silakan. Buku sejarah ada di rak nomor 5, bagian kiri.\nA: Berapa lama masa peminjaman bukunya?\nB: Untuk buku umum, masa peminjamannya dua minggu. Bisa diperpanjang satu kali.\nA: Apakah perlu membawa kartu anggota?\nB: Ya, kartu anggota wajib dibawa setiap meminjam buku.",
     question: "Berapa kali buku dapat diperpanjang masa peminjamannya?",
     options: [
@@ -146,7 +146,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-010",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-2.mp3",
     script: "A: Permisi, saya ingin meminjam buku tentang sejarah Indonesia.\nB: Silakan. Buku sejarah ada di rak nomor 5, bagian kiri.\nA: Berapa lama masa peminjaman bukunya?\nB: Untuk buku umum, masa peminjamannya dua minggu. Bisa diperpanjang satu kali.\nA: Apakah perlu membawa kartu anggota?\nB: Ya, kartu anggota wajib dibawa setiap meminjam buku.",
     question: "Apa yang wajib dibawa saat meminjam buku?",
     options: [
@@ -163,7 +163,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-011",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-3.mp3",
     script: "A: Permisi, apakah kereta jurusan Bandung sudah berangkat?\nB: Belum, Pak. Kereta akan berangkat 15 menit lagi dari peron 2.\nA: Apakah ada penundaan jadwal?\nB: Tidak ada penundaan. Kereta tepat waktu hari ini.\nA: Terima kasih informasinya.",
     question: "Kereta tujuan mana yang ditanyakan penumpang?",
     options: [
@@ -178,7 +178,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-012",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-3.mp3",
     script: "A: Permisi, apakah kereta jurusan Bandung sudah berangkat?\nB: Belum, Pak. Kereta akan berangkat 15 menit lagi dari peron 2.\nA: Apakah ada penundaan jadwal?\nB: Tidak ada penundaan. Kereta tepat waktu hari ini.\nA: Terima kasih informasinya.",
     question: "Apakah kereta sudah berangkat?",
     options: [
@@ -193,7 +193,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-013",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-3.mp3",
     script: "A: Permisi, apakah kereta jurusan Bandung sudah berangkat?\nB: Belum, Pak. Kereta akan berangkat 15 menit lagi dari peron 2.\nA: Apakah ada penundaan jadwal?\nB: Tidak ada penundaan. Kereta tepat waktu hari ini.\nA: Terima kasih informasinya.",
     question: "Berapa menit lagi kereta akan berangkat?",
     options: [
@@ -208,7 +208,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-014",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-3.mp3",
     script: "A: Permisi, apakah kereta jurusan Bandung sudah berangkat?\nB: Belum, Pak. Kereta akan berangkat 15 menit lagi dari peron 2.\nA: Apakah ada penundaan jadwal?\nB: Tidak ada penundaan. Kereta tepat waktu hari ini.\nA: Terima kasih informasinya.",
     question: "Dari peron berapa kereta akan berangkat?",
     options: [
@@ -223,7 +223,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-015",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-3.mp3",
     script: "A: Permisi, apakah kereta jurusan Bandung sudah berangkat?\nB: Belum, Pak. Kereta akan berangkat 15 menit lagi dari peron 2.\nA: Apakah ada penundaan jadwal?\nB: Tidak ada penundaan. Kereta tepat waktu hari ini.\nA: Terima kasih informasinya.",
     question: "Bagaimana kondisi jadwal kereta hari ini?",
     options: [
@@ -240,7 +240,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-016",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-4.mp3",
     script: "A: Selamat siang, Dokter. Bagaimana kondisi pasien di ruang 205?\nB: Kondisinya sudah membaik, Suster. Demamnya sudah turun sejak tadi pagi.\nA: Apakah obatnya perlu dilanjutkan?\nB: Ya, berikan obat yang sama selama tiga hari ke depan.\nA: Baik, Dokter. Apakah pasien sudah boleh makan makanan biasa?\nB: Boleh, tetapi hindari makanan yang terlalu pedas atau berminyak.",
     question: "Di ruang berapa pasien yang dibicarakan?",
     options: [
@@ -255,7 +255,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-017",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-4.mp3",
     script: "A: Selamat siang, Dokter. Bagaimana kondisi pasien di ruang 205?\nB: Kondisinya sudah membaik, Suster. Demamnya sudah turun sejak tadi pagi.\nA: Apakah obatnya perlu dilanjutkan?\nB: Ya, berikan obat yang sama selama tiga hari ke depan.\nA: Baik, Dokter. Apakah pasien sudah boleh makan makanan biasa?\nB: Boleh, tetapi hindari makanan yang terlalu pedas atau berminyak.",
     question: "Bagaimana kondisi pasien saat ini?",
     options: [
@@ -270,7 +270,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-018",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-4.mp3",
     script: "A: Selamat siang, Dokter. Bagaimana kondisi pasien di ruang 205?\nB: Kondisinya sudah membaik, Suster. Demamnya sudah turun sejak tadi pagi.\nA: Apakah obatnya perlu dilanjutkan?\nB: Ya, berikan obat yang sama selama tiga hari ke depan.\nA: Baik, Dokter. Apakah pasien sudah boleh makan makanan biasa?\nB: Boleh, tetapi hindari makanan yang terlalu pedas atau berminyak.",
     question: "Kapan demam pasien mulai turun?",
     options: [
@@ -285,7 +285,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-019",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-4.mp3",
     script: "A: Selamat siang, Dokter. Bagaimana kondisi pasien di ruang 205?\nB: Kondisinya sudah membaik, Suster. Demamnya sudah turun sejak tadi pagi.\nA: Apakah obatnya perlu dilanjutkan?\nB: Ya, berikan obat yang sama selama tiga hari ke depan.\nA: Baik, Dokter. Apakah pasien sudah boleh makan makanan biasa?\nB: Boleh, tetapi hindari makanan yang terlalu pedas atau berminyak.",
     question: "Berapa hari obat perlu dilanjutkan?",
     options: [
@@ -300,7 +300,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-020",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/dialog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/dialog-4.mp3",
     script: "A: Selamat siang, Dokter. Bagaimana kondisi pasien di ruang 205?\nB: Kondisinya sudah membaik, Suster. Demamnya sudah turun sejak tadi pagi.\nA: Apakah obatnya perlu dilanjutkan?\nB: Ya, berikan obat yang sama selama tiga hari ke depan.\nA: Baik, Dokter. Apakah pasien sudah boleh makan makanan biasa?\nB: Boleh, tetapi hindari makanan yang terlalu pedas atau berminyak.",
     question: "Makanan apa yang harus dihindari pasien?",
     options: [
@@ -317,7 +317,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-021",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-1.mp3",
     script: "Pengumuman untuk seluruh siswa kelas 12. Kegiatan ujian praktik akan dilaksanakan minggu depan, mulai hari Senin hingga Jumat. Setiap siswa wajib membawa peralatan praktik sesuai dengan mata pelajaran masing-masing. Bagi siswa yang berhalangan hadir karena sakit, wajib menyerahkan surat keterangan dokter paling lambat tiga hari setelah ujian. Ujian susulan akan diadakan pada minggu berikutnya. Terima kasih atas perhatiannya.",
     question: "Untuk siapa pengumuman ini ditujukan?",
     options: [
@@ -332,7 +332,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-022",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-1.mp3",
     script: "Pengumuman untuk seluruh siswa kelas 12. Kegiatan ujian praktik akan dilaksanakan minggu depan, mulai hari Senin hingga Jumat. Setiap siswa wajib membawa peralatan praktik sesuai dengan mata pelajaran masing-masing. Bagi siswa yang berhalangan hadir karena sakit, wajib menyerahkan surat keterangan dokter paling lambat tiga hari setelah ujian. Ujian susulan akan diadakan pada minggu berikutnya. Terima kasih atas perhatiannya.",
     question: "Kapan ujian praktik akan dilaksanakan?",
     options: [
@@ -347,7 +347,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-023",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-1.mp3",
     script: "Pengumuman untuk seluruh siswa kelas 12. Kegiatan ujian praktik akan dilaksanakan minggu depan, mulai hari Senin hingga Jumat. Setiap siswa wajib membawa peralatan praktik sesuai dengan mata pelajaran masing-masing. Bagi siswa yang berhalangan hadir karena sakit, wajib menyerahkan surat keterangan dokter paling lambat tiga hari setelah ujian. Ujian susulan akan diadakan pada minggu berikutnya. Terima kasih atas perhatiannya.",
     question: "Berapa hari ujian praktik berlangsung?",
     options: [
@@ -362,7 +362,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-024",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-1.mp3",
     script: "Pengumuman untuk seluruh siswa kelas 12. Kegiatan ujian praktik akan dilaksanakan minggu depan, mulai hari Senin hingga Jumat. Setiap siswa wajib membawa peralatan praktik sesuai dengan mata pelajaran masing-masing. Bagi siswa yang berhalangan hadir karena sakit, wajib menyerahkan surat keterangan dokter paling lambat tiga hari setelah ujian. Ujian susulan akan diadakan pada minggu berikutnya. Terima kasih atas perhatiannya.",
     question: "Batas waktu penyerahan surat keterangan dokter adalah?",
     options: [
@@ -377,7 +377,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-025",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-1.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-1.mp3",
     script: "Pengumuman untuk seluruh siswa kelas 12. Kegiatan ujian praktik akan dilaksanakan minggu depan, mulai hari Senin hingga Jumat. Setiap siswa wajib membawa peralatan praktik sesuai dengan mata pelajaran masing-masing. Bagi siswa yang berhalangan hadir karena sakit, wajib menyerahkan surat keterangan dokter paling lambat tiga hari setelah ujian. Ujian susulan akan diadakan pada minggu berikutnya. Terima kasih atas perhatiannya.",
     question: "Kapan ujian susulan akan diadakan?",
     options: [
@@ -394,7 +394,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-026",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-2.mp3",
     script: "Prakiraan cuaca untuk wilayah Jakarta dan sekitarnya hari ini. Pagi hari cuaca cerah berawan dengan suhu sekitar 26 derajat celsius. Memasuki siang hari, suhu akan meningkat hingga 32 derajat. Sore hari diperkirakan akan turun hujan ringan hingga sedang di beberapa wilayah. Masyarakat diimbau membawa payung atau jas hujan saat bepergian. Cuaca diprediksi kembali cerah pada malam hari dengan suhu 24 derajat celsius.",
     question: "Untuk wilayah mana prakiraan cuaca ini?",
     options: [
@@ -409,7 +409,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-027",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-2.mp3",
     script: "Prakiraan cuaca untuk wilayah Jakarta dan sekitarnya hari ini. Pagi hari cuaca cerah berawan dengan suhu sekitar 26 derajat celsius. Memasuki siang hari, suhu akan meningkat hingga 32 derajat. Sore hari diperkirakan akan turun hujan ringan hingga sedang di beberapa wilayah. Masyarakat diimbau membawa payung atau jas hujan saat bepergian. Cuaca diprediksi kembali cerah pada malam hari dengan suhu 24 derajat celsius.",
     question: "Berapa suhu pada pagi hari?",
     options: [
@@ -424,7 +424,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-028",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-2.mp3",
     script: "Prakiraan cuaca untuk wilayah Jakarta dan sekitarnya hari ini. Pagi hari cuaca cerah berawan dengan suhu sekitar 26 derajat celsius. Memasuki siang hari, suhu akan meningkat hingga 32 derajat. Sore hari diperkirakan akan turun hujan ringan hingga sedang di beberapa wilayah. Masyarakat diimbau membawa payung atau jas hujan saat bepergian. Cuaca diprediksi kembali cerah pada malam hari dengan suhu 24 derajat celsius.",
     question: "Berapa suhu tertinggi pada siang hari?",
     options: [
@@ -439,7 +439,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-029",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-2.mp3",
     script: "Prakiraan cuaca untuk wilayah Jakarta dan sekitarnya hari ini. Pagi hari cuaca cerah berawan dengan suhu sekitar 26 derajat celsius. Memasuki siang hari, suhu akan meningkat hingga 32 derajat. Sore hari diperkirakan akan turun hujan ringan hingga sedang di beberapa wilayah. Masyarakat diimbau membawa payung atau jas hujan saat bepergian. Cuaca diprediksi kembali cerah pada malam hari dengan suhu 24 derajat celsius.",
     question: "Bagaimana cuaca pada sore hari?",
     options: [
@@ -454,7 +454,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-030",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-2.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-2.mp3",
     script: "Prakiraan cuaca untuk wilayah Jakarta dan sekitarnya hari ini. Pagi hari cuaca cerah berawan dengan suhu sekitar 26 derajat celsius. Memasuki siang hari, suhu akan meningkat hingga 32 derajat. Sore hari diperkirakan akan turun hujan ringan hingga sedang di beberapa wilayah. Masyarakat diimbau membawa payung atau jas hujan saat bepergian. Cuaca diprediksi kembali cerah pada malam hari dengan suhu 24 derajat celsius.",
     question: "Apa imbauan untuk masyarakat?",
     options: [
@@ -471,7 +471,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-031",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-3.mp3",
     script: "Memperkenalkan sabun mandi herbal \"Segar Alami\" yang terbuat dari bahan-bahan alami pilihan. Sabun ini mengandung ekstrak lidah buaya dan minyak zaitun yang dapat melembapkan kulit. Cocok untuk semua jenis kulit, termasuk kulit sensitif. Tersedia dalam tiga varian aroma: lavender, melati, dan peppermint. Dapatkan diskon 30 persen untuk pembelian di minggu pertama peluncuran. Sabun mandi \"Segar Alami\", pilihan tepat untuk kulit sehat dan segar.",
     question: "Apa nama produk yang diiklankan?",
     options: [
@@ -486,7 +486,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-032",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-3.mp3",
     script: "Memperkenalkan sabun mandi herbal \"Segar Alami\" yang terbuat dari bahan-bahan alami pilihan. Sabun ini mengandung ekstrak lidah buaya dan minyak zaitun yang dapat melembapkan kulit. Cocok untuk semua jenis kulit, termasuk kulit sensitif. Tersedia dalam tiga varian aroma: lavender, melati, dan peppermint. Dapatkan diskon 30 persen untuk pembelian di minggu pertama peluncuran. Sabun mandi \"Segar Alami\", pilihan tepat untuk kulit sehat dan segar.",
     question: "Apa kandungan utama sabun ini?",
     options: [
@@ -501,7 +501,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-033",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-3.mp3",
     script: "Memperkenalkan sabun mandi herbal \"Segar Alami\" yang terbuat dari bahan-bahan alami pilihan. Sabun ini mengandung ekstrak lidah buaya dan minyak zaitun yang dapat melembapkan kulit. Cocok untuk semua jenis kulit, termasuk kulit sensitif. Tersedia dalam tiga varian aroma: lavender, melati, dan peppermint. Dapatkan diskon 30 persen untuk pembelian di minggu pertama peluncuran. Sabun mandi \"Segar Alami\", pilihan tepat untuk kulit sehat dan segar.",
     question: "Berapa varian aroma yang tersedia?",
     options: [
@@ -516,7 +516,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-034",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-3.mp3",
     script: "Memperkenalkan sabun mandi herbal \"Segar Alami\" yang terbuat dari bahan-bahan alami pilihan. Sabun ini mengandung ekstrak lidah buaya dan minyak zaitun yang dapat melembapkan kulit. Cocok untuk semua jenis kulit, termasuk kulit sensitif. Tersedia dalam tiga varian aroma: lavender, melati, dan peppermint. Dapatkan diskon 30 persen untuk pembelian di minggu pertama peluncuran. Sabun mandi \"Segar Alami\", pilihan tepat untuk kulit sehat dan segar.",
     question: "Berapa persen diskon yang ditawarkan?",
     options: [
@@ -531,7 +531,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-035",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-3.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-3.mp3",
     script: "Memperkenalkan sabun mandi herbal \"Segar Alami\" yang terbuat dari bahan-bahan alami pilihan. Sabun ini mengandung ekstrak lidah buaya dan minyak zaitun yang dapat melembapkan kulit. Cocok untuk semua jenis kulit, termasuk kulit sensitif. Tersedia dalam tiga varian aroma: lavender, melati, dan peppermint. Dapatkan diskon 30 persen untuk pembelian di minggu pertama peluncuran. Sabun mandi \"Segar Alami\", pilihan tepat untuk kulit sehat dan segar.",
     question: "Kapan periode diskon berlaku?",
     options: [
@@ -548,7 +548,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-036",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-4.mp3",
     script: "Selamat datang di Museum Nasional Indonesia. Museum ini dibuka setiap hari kecuali hari Senin, mulai pukul 8 pagi hingga 4 sore. Harga tiket masuk untuk dewasa adalah 10 ribu rupiah, sedangkan untuk pelajar dan anak-anak 5 ribu rupiah. Pengunjung tidak diperkenankan membawa makanan dan minuman ke dalam ruang pameran. Fotografi tanpa blitz diperbolehkan. Untuk informasi lebih lanjut, silakan hubungi petugas informasi di lobi utama.",
     question: "Pada hari apa museum tutup?",
     options: [
@@ -563,7 +563,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-037",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-4.mp3",
     script: "Selamat datang di Museum Nasional Indonesia. Museum ini dibuka setiap hari kecuali hari Senin, mulai pukul 8 pagi hingga 4 sore. Harga tiket masuk untuk dewasa adalah 10 ribu rupiah, sedangkan untuk pelajar dan anak-anak 5 ribu rupiah. Pengunjung tidak diperkenankan membawa makanan dan minuman ke dalam ruang pameran. Fotografi tanpa blitz diperbolehkan. Untuk informasi lebih lanjut, silakan hubungi petugas informasi di lobi utama.",
     question: "Pukul berapa museum dibuka?",
     options: [
@@ -578,7 +578,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-038",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-4.mp3",
     script: "Selamat datang di Museum Nasional Indonesia. Museum ini dibuka setiap hari kecuali hari Senin, mulai pukul 8 pagi hingga 4 sore. Harga tiket masuk untuk dewasa adalah 10 ribu rupiah, sedangkan untuk pelajar dan anak-anak 5 ribu rupiah. Pengunjung tidak diperkenankan membawa makanan dan minuman ke dalam ruang pameran. Fotografi tanpa blitz diperbolehkan. Untuk informasi lebih lanjut, silakan hubungi petugas informasi di lobi utama.",
     question: "Berapa harga tiket untuk dewasa?",
     options: [
@@ -593,7 +593,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-039",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-4.mp3",
     script: "Selamat datang di Museum Nasional Indonesia. Museum ini dibuka setiap hari kecuali hari Senin, mulai pukul 8 pagi hingga 4 sore. Harga tiket masuk untuk dewasa adalah 10 ribu rupiah, sedangkan untuk pelajar dan anak-anak 5 ribu rupiah. Pengunjung tidak diperkenankan membawa makanan dan minuman ke dalam ruang pameran. Fotografi tanpa blitz diperbolehkan. Untuk informasi lebih lanjut, silakan hubungi petugas informasi di lobi utama.",
     question: "Apa yang tidak diperkenankan dibawa ke ruang pameran?",
     options: [
@@ -608,7 +608,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S1-040",
     section: "mendengarkan",
-    audioPath: "/audio/simulasi1/monolog-4.mp3",
+    audioPath: "/simulasi/paket1/audio/monolog-4.mp3",
     script: "Selamat datang di Museum Nasional Indonesia. Museum ini dibuka setiap hari kecuali hari Senin, mulai pukul 8 pagi hingga 4 sore. Harga tiket masuk untuk dewasa adalah 10 ribu rupiah, sedangkan untuk pelajar dan anak-anak 5 ribu rupiah. Pengunjung tidak diperkenankan membawa makanan dan minuman ke dalam ruang pameran. Fotografi tanpa blitz diperbolehkan. Untuk informasi lebih lanjut, silakan hubungi petugas informasi di lobi utama.",
     question: "Bagaimana aturan fotografi di museum?",
     options: [
