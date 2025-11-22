@@ -955,7 +955,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-001",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-1.png",
     question: "Siapa nama bayi yang diakikahi?",
     options: [
       "Bunga",
@@ -969,7 +969,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-002",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-1.png",
     question: "Kapan bayi tersebut lahir?",
     options: [
       "16 September 2024",
@@ -983,7 +983,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-003",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-1.png",
     question: "Pada hari apa acara akikah dilaksanakan?",
     options: [
       "Sabtu",
@@ -997,7 +997,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-004",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-1.png",
     question: "Di kecamatan mana acara tersebut dilaksanakan?",
     options: [
       "Kecamatan Pasar Baru",
@@ -1011,7 +1011,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-005",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-akikah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-1.png",
     question: "Pukul berapa acara dimulai?",
     options: [
       "08.00 WIB",
@@ -1027,7 +1027,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-006",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-2.png",
     question: "Apa tema seminar yang akan dilaksanakan?",
     options: [
       "Meningkatkan Kualitas Pendidikan",
@@ -1041,7 +1041,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-007",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-2.png",
     question: "Siapa pembicara dalam seminar tersebut?",
     options: [
       "Prof. Ahmad Santoso, M.Pd.",
@@ -1055,7 +1055,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-008",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-2.png",
     question: "Kapan seminar akan dilaksanakan?",
     options: [
       "Jumat, 15 Januari 2025",
@@ -1069,7 +1069,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-009",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-2.png",
     question: "Berapa kuota peserta seminar?",
     options: [
       "100 peserta",
@@ -1083,7 +1083,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-010",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-seminar.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-2.png",
     question: "Berapa biaya untuk mengikuti seminar?",
     options: [
       "Rp 50.000",
@@ -1099,7 +1099,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-011",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-3.png",
     question: "Apa tema lomba menulis cerpen?",
     options: [
       "Nusantara dalam Cerita",
@@ -1113,7 +1113,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-012",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-3.png",
     question: "Berapa hadiah untuk juara pertama?",
     options: [
       "Rp 3.000.000",
@@ -1127,7 +1127,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-013",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-3.png",
     question: "Kapan batas akhir pendaftaran lomba?",
     options: [
       "31 Januari 2025",
@@ -1141,7 +1141,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-014",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-3.png",
     question: "Siapa penyelenggara lomba menulis ini?",
     options: [
       "Kementerian Pendidikan",
@@ -1155,7 +1155,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-015",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lomba-menulis.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-3.png",
     question: "Kapan pengumuman pemenang lomba?",
     options: [
       "1 Maret 2025",
@@ -1171,7 +1171,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-016",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-4.png",
     question: "Siapa penyelenggara kegiatan donor darah?",
     options: [
       "PMI Kota Jakarta",
@@ -1185,7 +1185,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-017",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-4.png",
     question: "Berapa berat badan minimal untuk donor darah?",
     options: [
       "40 kg",
@@ -1199,7 +1199,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-018",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-4.png",
     question: "Kapan kegiatan donor darah dilaksanakan?",
     options: [
       "Kamis, 20 Februari 2025",
@@ -1213,7 +1213,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-019",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-4.png",
     question: "Apa saja fasilitas yang diberikan untuk pendonor?",
     options: [
       "Snack dan sertifikat",
@@ -1227,7 +1227,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-020",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-donor-darah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-4.png",
     question: "Berapa rentang usia yang diperbolehkan untuk donor darah?",
     options: [
       "15-55 tahun",
@@ -1243,7 +1243,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-021",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-5.png",
     question: "Apa judul pameran seni yang diadakan?",
     options: [
       "Seni Nusantara",
@@ -1257,7 +1257,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-022",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-5.png",
     question: "Berapa jumlah seniman yang berpartisipasi?",
     options: [
       "10 seniman",
@@ -1271,7 +1271,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-023",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-5.png",
     question: "Kapan acara pembukaan pameran?",
     options: [
       "Rabu, 5 Maret 2025 pukul 18.00 WIB",
@@ -1285,7 +1285,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-024",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-5.png",
     question: "Pada hari apa galeri tutup?",
     options: [
       "Minggu",
@@ -1299,7 +1299,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-025",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-pameran-seni.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-5.png",
     question: "Berapa harga tiket masuk pameran?",
     options: [
       "Rp 10.000",
@@ -1315,7 +1315,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-026",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-6.png",
     question: "Sekolah mana yang mengeluarkan pengumuman?",
     options: [
       "SMA Negeri 3 Bandung",
@@ -1329,7 +1329,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-027",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-6.png",
     question: "Kapan siswa masuk kembali setelah libur?",
     options: [
       "Senin, 10 Juli 2025",
@@ -1343,7 +1343,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-028",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-6.png",
     question: "Kapan pengambilan raport dilaksanakan?",
     options: [
       "Jumat, 21 Juni 2025",
@@ -1357,7 +1357,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-029",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-6.png",
     question: "Berapa lama periode libur semester?",
     options: [
       "15 hari",
@@ -1371,7 +1371,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-030",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-libur-sekolah.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-6.png",
     question: "Apa yang wajib dilakukan siswa saat pengambilan raport?",
     options: [
       "Membawa orang tua",
@@ -1387,7 +1387,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-031",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-7.png",
     question: "Perusahaan apa yang membuka lowongan kerja?",
     options: [
       "PT Teknologi Digital Indonesia",
@@ -1401,7 +1401,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-032",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-7.png",
     question: "Berapa posisi Web Developer yang dibutuhkan?",
     options: [
       "1 orang",
@@ -1415,7 +1415,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-033",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-7.png",
     question: "Berapa pengalaman minimal untuk posisi Web Developer?",
     options: [
       "1 tahun",
@@ -1429,7 +1429,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-034",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-7.png",
     question: "Kemana CV dan portofolio harus dikirim?",
     options: [
       "recruitment@digitaltek.com",
@@ -1443,7 +1443,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-035",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-lowongan-kerja.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-7.png",
     question: "Kapan batas akhir pengiriman lamaran?",
     options: [
       "28 Januari 2025",
@@ -1459,7 +1459,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-036",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-8.png",
     question: "Apa nama posyandu yang tertera pada poster?",
     options: [
       "Posyandu Mawar 5",
@@ -1473,7 +1473,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-037",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-8.png",
     question: "Kegiatan apa yang dilaksanakan pada minggu ke-2 Februari?",
     options: [
       "Penimbangan balita",
@@ -1487,7 +1487,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-038",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-8.png",
     question: "Untuk usia berapa imunisasi DPT diberikan?",
     options: [
       "0-2 bulan",
@@ -1501,7 +1501,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-039",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-8.png",
     question: "Apa yang harus dibawa saat datang ke posyandu?",
     options: [
       "KTP",
@@ -1515,7 +1515,7 @@ export const simulasiPaket1 = [
   {
     id: "P1-S3-040",
     section: "membaca",
-    readingImagePath: "/images/simulasi1/poster-posyandu.png",
+    readingImagePath: "/simulasi/paket1/gambar/gambar-8.png",
     question: "Pukul berapa kegiatan posyandu dimulai?",
     options: [
       "08.00 WIB",
