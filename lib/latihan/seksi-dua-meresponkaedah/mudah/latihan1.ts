@@ -7,7 +7,7 @@ const soalMerespon: SoalMeresponKaedah[] = [
     id: 11,
     seksi: 'seksi-dua-meresponkaedah',
     tingkat_kesulitan: 'mudah',
-    dialog_x: "X: Apakah toko ini selalu **sibuk**?", // Gunakan ** untuk bold atau markdown jika tidak ada garis bawah
+    dialog_x: "X: Apakah toko ini selalu **sibuk**?",
     kata_x: "sibuk",
     opsi_x: ["berisik", "ramai"],
     

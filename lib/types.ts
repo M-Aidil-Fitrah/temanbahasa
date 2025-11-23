@@ -6,7 +6,7 @@ export interface Soal {
     seksi: Exclude<SeksiType, 'seksi-dua-meresponkaedah'>;
     tingkat_kesulitan: Exclude<KesulitanType, 'adaptif'>
     pertanyaan: string;
-    audio_url?: string;
+    audio_url?: string | undefined | null;
     opsi: string[];
     jawaban_benar: string;
     pembahasan: string;
@@ -31,7 +31,7 @@ export interface SoalMeresponKaedah {
 }
 
 export interface JawabanHistoryItem {
-    soal: Soal;
+    soal: Soal | SoalMeresponKaedah;
     jawabanUser: string;
     isCorrect: boolean;
 }

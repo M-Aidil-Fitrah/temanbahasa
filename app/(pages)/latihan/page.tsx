@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 export default function LatihanHome() {
-  const seksi = ['seksi-satu-mendengarkan', 'seksi-dua-meresponkaedah', 'membaca'];
+  const seksi = ['seksi-satu-mendengarkan', 'seksi-dua-meresponkaedah', 'seksi-tiga-membaca'];
   const kesulitan = ['mudah', 'menengah', 'sulit', 'adaptif'];
 
   return (
