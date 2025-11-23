@@ -1,6 +1,6 @@
 "use server";
 
-export const simulasiPaket1 = [
+const simulasiPaket1 = [
   // ========================
   // SEKSI 1 - MENDENGARKAN (40 SOAL)
   // ========================
@@ -1527,3 +1527,8 @@ export const simulasiPaket1 = [
     explanation: "Kegiatan posyandu dimulai pukul 09.00-12.00 WIB."
   }
 ];
+
+// Server Action untuk mengambil data simulasi
+export async function getSimulasiPaket1() {
+  return simulasiPaket1;
+}
