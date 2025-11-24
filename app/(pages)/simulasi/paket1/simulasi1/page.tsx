@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 interface Question {
-  id: number;
+  id: string | number;
   section: "mendengarkan" | "kaidah" | "membaca";
   audioPath?: string;
   readingImagePath?: string;
@@ -29,7 +29,7 @@ export default function Simulasi1Page() {
   >("mendengarkan");
   const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
   const [showResults, setShowResults] = useState(false);
-  const [audioPlayed, setAudioPlayed] = useState<Set<string>>(new Set());
+  const [isLoading, setIsLoading] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Load questions
@@ -37,11 +37,16 @@ export default function Simulasi1Page() {
     const loadQuestions = async () => {
       try {
         const response = await fetch("/api/simulasi/paket1/simulasi1");
+        if (!response.ok) {
+          throw new Error('Failed to load questions');
+        }
         const data = await response.json();
         setQuestions(data);
         setAnswers(new Array(data.length).fill(null));
       } catch (error) {
         console.error("Error loading questions:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     loadQuestions();
@@ -146,6 +151,17 @@ export default function Simulasi1Page() {
       percentage: ((correct / questions.length) * 100).toFixed(2),
     };
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-purple-50 to-blue-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Memuat soal...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (questions.length === 0) {
     return (
@@ -411,11 +427,7 @@ export default function Simulasi1Page() {
                     controls
                     className="w-full"
                     src={currentQuestion.audioPath}
-                    onPlay={() => {
-                      const newPlayed = new Set(audioPlayed);
-                      newPlayed.add(currentQuestion.audioPath!);
-                      setAudioPlayed(newPlayed);
-                    }}
+                    key={currentQuestion.audioPath}
                   >
                     Browser Anda tidak mendukung audio player.
                   </audio>
