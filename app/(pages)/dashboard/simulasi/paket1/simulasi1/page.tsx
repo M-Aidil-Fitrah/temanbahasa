@@ -581,18 +581,55 @@ export default function Simulasi1Page() {
                 </div>
               )}
 
-            {/* Image for Seksi 3 */}
+            {/* Image for Seksi 3 - Ditampilkan untuk semua soal dalam grup yang sama */}
             {currentQuestion.section === "membaca" &&
               currentQuestion.readingImagePath && (
-                <div className="mb-6">
-                  <div className="relative w-full h-96 bg-gray-100 rounded-lg overflow-hidden">
-                    <Image
-                      src={currentQuestion.readingImagePath}
-                      alt={`Gambar soal ${currentQuestionIndex + 1}`}
-                      fill
-                      className="object-contain"
-                    />
+                <div className="mb-6 bg-[#B5F0C8]/30 border-4 border-black rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-[#B5F0C8] border-3 border-black rounded-full flex items-center justify-center">
+                        <span className="text-2xl">📖</span>
+                      </div>
+                      <div>
+                        <h3 className="font-black text-gray-900">Gambar</h3>
+                        <p className="text-sm font-bold text-gray-600">
+                          {(() => {
+                            const sameImageQuestions = currentSectionQuestions.filter(
+                              q => q.readingImagePath === currentQuestion.readingImagePath
+                            );
+                            const firstIndex = currentSectionQuestions.findIndex(
+                              q => q.readingImagePath === currentQuestion.readingImagePath
+                            ) + 1;
+                            const lastIndex = firstIndex + sameImageQuestions.length - 1;
+                            return `Untuk soal ${firstIndex} - ${lastIndex}`;
+                          })()}
+                        </p>
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Image Container */}
+                  <div 
+                    className="relative w-full rounded-xl overflow-hidden border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] bg-white select-none"
+                    onCopy={preventCopy}
+                    onContextMenu={preventCopy}
+                    onDragStart={preventCopy}
+                  >
+                    <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                      <Image
+                        src={currentQuestion.readingImagePath}
+                        alt="Bacaan untuk soal"
+                        fill
+                        className="object-contain select-none"
+                        onContextMenu={preventCopy}
+                        onDragStart={preventCopy}
+                        priority
+                      />
+                    </div>
+                  </div>
+                  <p className="text-sm font-bold text-gray-700 text-center mt-4">
+                    Perhatikan gambar di atas untuk menjawab pertanyaan-pertanyaan berikut
+                  </p>
                 </div>
               )}
 
