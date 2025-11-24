@@ -33,6 +33,8 @@ export default function Simulasi1Page() {
   const [isLoading, setIsLoading] = useState(true);
   const [showPreparation, setShowPreparation] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const [playedAudios, setPlayedAudios] = useState<Set<string>>(new Set());
+  const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
 
   // Prevent copy, select, and context menu
   const preventCopy = (e: React.MouseEvent | React.KeyboardEvent | React.ClipboardEvent) => {
@@ -170,6 +172,25 @@ export default function Simulasi1Page() {
     setMarkedQuestions(newMarked);
   };
 
+  const handlePlayAudio = (audioPath: string) => {
+    if (playedAudios.has(audioPath)) {
+      // Audio sudah pernah diputar, tidak bisa diputar lagi
+      return;
+    }
+
+    if (audioRef.current) {
+      audioRef.current.src = audioPath;
+      audioRef.current.play();
+      setCurrentlyPlaying(audioPath);
+      
+      // Mark audio as played when it ends
+      audioRef.current.onended = () => {
+        setPlayedAudios(prev => new Set(prev).add(audioPath));
+        setCurrentlyPlaying(null);
+      };
+    }
+  };
+
   const handleNext = () => {
     const currentSectionQuestions = questions.filter(
       (q) => q.section === currentSection
@@ -268,6 +289,18 @@ export default function Simulasi1Page() {
   
   // Get question number within current section (1-based)
   const questionNumberInSection = currentQuestionIndex - currentSectionStartIndex + 1;
+  
+  // Check if current question is the first in its audio group (for mendengarkan section)
+  const isFirstInAudioGroup = () => {
+    if (currentQuestion.section !== "mendengarkan" || !currentQuestion.audioPath) {
+      return false;
+    }
+    // Find the first question with the same audio path in current section
+    const firstWithSameAudio = currentSectionQuestions.findIndex(
+      q => q.audioPath === currentQuestion.audioPath
+    );
+    return questionNumberInSection === firstWithSameAudio + 1;
+  };
   
   // Get section info
   const getSectionInfo = (section: string) => {
@@ -439,25 +472,81 @@ export default function Simulasi1Page() {
               </div>
             </div>
 
-            {/* Audio Player for Seksi 1 */}
+            {/* Audio Player for Seksi 1 - Ditampilkan untuk semua soal dalam grup yang sama */}
             {currentQuestion.section === "mendengarkan" &&
               currentQuestion.audioPath && (
-                <div className="mb-6 bg-purple-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-800 mb-3">
-                    Audio Listening
-                  </h3>
+                <div className="mb-6 bg-[#C7E9FF]/30 border-4 border-black rounded-2xl p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-[#C7E9FF] border-3 border-black rounded-full flex items-center justify-center">
+                        <span className="text-2xl">🎧</span>
+                      </div>
+                      <div>
+                        <h3 className="font-black text-gray-900">Audio Dialog/Monolog</h3>
+                        <p className="text-sm font-bold text-gray-600">
+                          {(() => {
+                            const sameAudioQuestions = currentSectionQuestions.filter(
+                              q => q.audioPath === currentQuestion.audioPath
+                            );
+                            const firstIndex = currentSectionQuestions.findIndex(
+                              q => q.audioPath === currentQuestion.audioPath
+                            ) + 1;
+                            const lastIndex = firstIndex + sameAudioQuestions.length - 1;
+                            return `Untuk soal ${firstIndex} - ${lastIndex}`;
+                          })()}
+                        </p>
+                      </div>
+                    </div>
+                    {playedAudios.has(currentQuestion.audioPath) && (
+                      <span className="px-3 py-1 bg-green-100 border-2 border-green-700 text-green-700 rounded-full text-xs font-black">
+                        ✓ Sudah Diputar
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Hidden Audio Element */}
                   <audio
                     ref={audioRef}
-                    controls
-                    className="w-full"
-                    src={currentQuestion.audioPath}
-                    key={currentQuestion.audioPath}
+                    className="hidden"
+                    onContextMenu={preventCopy}
                   >
                     Browser Anda tidak mendukung audio player.
                   </audio>
-                  <p className="text-sm text-gray-600 mt-2">
-                    Dengarkan audio dengan seksama sebelum menjawab pertanyaan.
-                  </p>
+
+                  {/* Custom Play Button */}
+                  <div className="flex flex-col items-center gap-4">
+                    <button
+                      onClick={() => handlePlayAudio(currentQuestion.audioPath!)}
+                      disabled={playedAudios.has(currentQuestion.audioPath) || currentlyPlaying === currentQuestion.audioPath}
+                      className={`px-8 py-4 rounded-2xl border-4 border-black font-black text-lg transition-all shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:hover:translate-y-0 ${
+                        currentlyPlaying === currentQuestion.audioPath
+                          ? "bg-[#FFD93D] text-gray-900"
+                          : playedAudios.has(currentQuestion.audioPath)
+                          ? "bg-gray-300 text-gray-600"
+                          : "bg-[#B5F0C8] text-gray-900"
+                      }`}
+                    >
+                      {currentlyPlaying === currentQuestion.audioPath ? (
+                        <span className="flex items-center gap-2">
+                          <span className="animate-pulse">🔊</span> Sedang Diputar...
+                        </span>
+                      ) : playedAudios.has(currentQuestion.audioPath) ? (
+                        <span className="flex items-center gap-2">
+                          🔒 Audio Sudah Diputar
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-2">
+                          ▶️ Putar Audio
+                        </span>
+                      )}
+                    </button>
+                    <p className="text-sm font-bold text-gray-700 text-center max-w-md">
+                      {playedAudios.has(currentQuestion.audioPath) 
+                        ? "Audio hanya dapat diputar sekali. Silakan jawab semua pertanyaan terkait audio ini."
+                        : "⚠️ Audio hanya dapat diputar SATU KALI. Pastikan Anda siap mendengarkan sebelum menekan tombol putar."
+                      }
+                    </p>
+                  </div>
                 </div>
               )}
 
