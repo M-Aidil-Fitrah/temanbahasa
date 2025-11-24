@@ -25,7 +25,7 @@ export default function Paket1Page() {
   };
 
   const handleStartTest = () => {
-    router.push(`/simulasi/paket1/simulasi${selectedSimulasi}/persiapan?section=mendengarkan`);
+    router.push(`/dashboard/simulasi/paket1/simulasi${selectedSimulasi}/persiapan?section=mendengarkan`);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function Paket1Page() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-8">
           <Link
-            href="/simulasi"
+            href="/dashboard/simulasi"
             className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium"
           >
             <svg

@@ -147,10 +147,10 @@ export default function Simulasi1Page() {
 
     if (currentSection === "mendengarkan") {
       // Redirect to preparation page for Seksi 2
-      router.push("/simulasi/paket1/simulasi1/persiapan?section=kaidah");
+      router.push("/dashboard/simulasi/paket1/simulasi1/persiapan?section=kaidah");
     } else if (currentSection === "kaidah") {
       // Redirect to preparation page for Seksi 3
-      router.push("/simulasi/paket1/simulasi1/persiapan?section=membaca");
+      router.push("/dashboard/simulasi/paket1/simulasi1/persiapan?section=membaca");
     } else {
       setShowResults(true);
     }
@@ -333,7 +333,7 @@ export default function Simulasi1Page() {
 
             <div className="mt-8 flex gap-4">
               <button
-                onClick={() => router.push("/simulasi/paket1")}
+                onClick={() => router.push("/dashboard/simulasi/paket1")}
                 className="flex-1 px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
               >
                 Kembali ke Pilihan Simulasi

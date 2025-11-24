@@ -23,7 +23,7 @@ export default function SimulasiPage() {
           {paketList.map((paket) => (
             <Link
               key={paket.id}
-              href={paket.available ? `/simulasi/paket${paket.id}` : "#"}
+              href={paket.available ? `/dashboard/simulasi/paket${paket.id}` : "#"}
               className={`block ${
                 paket.available
                   ? "hover:scale-105 cursor-pointer"

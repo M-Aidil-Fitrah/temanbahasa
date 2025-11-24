@@ -84,7 +84,7 @@ export default function PersiapanPage() {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          router.push(`/simulasi/paket1/simulasi1?section=${sectionParam}`);
+          router.push(`/dashboard/simulasi/paket1/simulasi1?section=${sectionParam}`);
           return 0;
         }
         return prev - 1;
@@ -95,7 +95,7 @@ export default function PersiapanPage() {
   }, [isReady, router, sectionParam]);
 
   const handleStartNow = () => {
-    router.push(`/simulasi/paket1/simulasi1?section=${sectionParam}`);
+    router.push(`/dashboard/simulasi/paket1/simulasi1?section=${sectionParam}`);
   };
 
   const formatTime = (seconds: number) => {
@@ -225,7 +225,7 @@ export default function PersiapanPage() {
           {/* Action Buttons */}
           <div className="flex gap-4">
             <button
-              onClick={() => router.push("/simulasi/paket1")}
+              onClick={() => router.push("/dashboard/simulasi/paket1")}
               className="flex-1 px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
             >
               Batal
