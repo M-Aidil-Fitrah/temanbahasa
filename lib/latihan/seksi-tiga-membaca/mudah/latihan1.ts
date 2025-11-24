@@ -75,6 +75,81 @@ export const soalData: Soal[] = [
         ],
         "jawaban_benar": "B",
         "pembahasan": "Teks menyebutkan, 'Musik tradisional Gamelan berasal dari Jawa dan Bali, Indonesia'."
+    },
+    {
+        "id": 6,
+        "pertanyaan": "Teks Bacaan:\n\nSalah satu keajaiban alam di Indonesia adalah Danau Toba, yang terletak di Sumatra Utara. Danau ini sebenarnya adalah kaldera besar yang terbentuk akibat letusan gunung berapi dahsyat sekitar 74.000 tahun yang lalu. Di tengah danau terdapat Pulau Samosir yang menjadi pusat kebudayaan Batak.\n\n**Pertanyaan:** Berapa usia perkiraan letusan gunung berapi yang membentuk Danau Toba?",
+        "seksi": "seksi-tiga-membaca",
+        "tingkat_kesulitan": "mudah",
+        "audio_url": null,
+        "opsi": [
+            "A. Sekitar 74.000 tahun yang lalu.",
+            "B. Sekitar 7.400 tahun yang lalu.",
+            "C. Baru terbentuk dalam 1.000 tahun terakhir.",
+            "D. Bersamaan dengan terbentuknya Pulau Samosir."
+        ],
+        "jawaban_benar": "A",
+        "pembahasan": "Teks secara eksplisit menyebutkan bahwa letusan gunung berapi dahsyat terjadi 'sekitar 74.000 tahun yang lalu'."
+    },
+    {
+        "id": 7,
+        "pertanyaan": "Teks Bacaan:\n\nProtokol kesehatan 3M (Memakai masker, Mencuci tangan, Menjaga jarak) adalah langkah dasar yang wajib dipatuhi oleh masyarakat untuk mencegah penularan penyakit menular melalui udara. Memakai masker bertujuan membatasi droplet yang keluar atau masuk, sedangkan mencuci tangan bertujuan menghilangkan kuman atau virus di permukaan kulit.\n\n**Pertanyaan:** Apa tujuan utama dari tindakan mencuci tangan dalam protokol kesehatan 3M?",
+        "seksi": "seksi-tiga-membaca",
+        "tingkat_kesulitan": "mudah",
+        "audio_url": null,
+        "opsi": [
+            "A. Membatasi droplet yang keluar dari mulut.",
+            "B. Menggantikan fungsi masker.",
+            "C. Menghilangkan kuman atau virus di permukaan kulit.",
+            "D. Menjaga jarak dari orang lain."
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Teks secara langsung menjelaskan bahwa mencuci tangan bertujuan 'menghilangkan kuman atau virus di permukaan kulit'."
+    },
+    {
+        "id": 8,
+        "pertanyaan": "Teks Bacaan:\n\nPelestarian hutan mangrove sangat penting bagi ekosistem pesisir. Hutan mangrove berfungsi sebagai pelindung alami dari abrasi pantai dan gelombang pasang. Selain itu, akar-akar pohon mangrove yang lebat juga menjadi tempat berkembang biak yang ideal bagi berbagai jenis ikan, kepiting, dan biota laut lainnya.\n\n**Pertanyaan:** Sebutkan salah satu fungsi utama hutan mangrove yang berkaitan dengan pencegahan kerusakan pantai.",
+        "seksi": "seksi-tiga-membaca",
+        "tingkat_kesulitan": "mudah",
+        "audio_url": null,
+        "opsi": [
+            "A. Sebagai sumber utama kayu bakar.",
+            "B. Sebagai pelindung alami dari abrasi pantai.",
+            "C. Tempat budidaya ikan bandeng secara komersial.",
+            "D. Menghasilkan buah yang bisa dimakan manusia."
+        ],
+        "jawaban_benar": "B",
+        "pembahasan": "Teks menyatakan bahwa hutan mangrove berfungsi 'sebagai pelindung alami dari abrasi pantai dan gelombang pasang'."
+    },
+    {
+        "id": 9,
+        "pertanyaan": "Teks Bacaan:\n\n(1) Perpustakaan digital menawarkan kemudahan akses ke ribuan koleksi buku, jurnal, dan dokumen tanpa batasan ruang dan waktu. Koleksi-koleksi ini dapat diakses kapan saja dan di mana saja asalkan tersedia koneksi internet.\n\n(2) Meskipun demikian, tantangan utamanya adalah memastikan semua koleksi digital tersebut bebas dari pelanggaran hak cipta dan dapat diakses dengan antarmuka yang ramah pengguna.\n\n**Pertanyaan:** Apa keunggulan utama perpustakaan digital berdasarkan Paragraf (1)?",
+        "seksi": "seksi-tiga-membaca",
+        "tingkat_kesulitan": "mudah",
+        "audio_url": null,
+        "opsi": [
+            "A. Koleksi harus dibeli secara fisik di toko buku.",
+            "B. Akses terbatas hanya pada jam operasional tertentu.",
+            "C. Kemudahan akses ke ribuan koleksi tanpa batasan ruang dan waktu.",
+            "D. Hanya menyediakan jurnal ilmiah dan bukan buku populer."
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Teks menyebutkan keunggulannya adalah 'kemudahan akses ke ribuan koleksi buku, jurnal, dan dokumen tanpa batasan ruang dan waktu'."
+    },
+    {
+        "id": 10,
+        "pertanyaan": "Teks Bacaan:\n\nProses fotosintesis adalah proses biokimia yang dilakukan oleh tumbuhan, alga, dan beberapa jenis bakteri untuk menghasilkan energi. Proses ini memerlukan tiga elemen utama: air, karbon dioksida, dan cahaya matahari. Hasil akhir dari proses fotosintesis adalah glukosa (sebagai makanan) dan oksigen (yang dilepaskan ke udara).\n\n**Pertanyaan:** Apa hasil utama dari proses fotosintesis yang dilepaskan ke udara?",
+        "seksi": "seksi-tiga-membaca",
+        "tingkat_kesulitan": "mudah",
+        "audio_url": null,
+        "opsi": [
+            "A. Air dan Karbon Dioksida.",
+            "B. Glukosa dan Mineral.",
+            "C. Oksigen.",
+            "D. Cahaya Matahari."
+        ],
+        "jawaban_benar": "C",
+        "pembahasan": "Teks menyatakan, 'Hasil akhir dari proses fotosintesis adalah glukosa (sebagai makanan) dan oksigen (yang dilepaskan ke udara)'."
     }
 ]
 
