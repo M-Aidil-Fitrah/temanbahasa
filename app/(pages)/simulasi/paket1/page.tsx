@@ -25,7 +25,7 @@ export default function Paket1Page() {
   };
 
   const handleStartTest = () => {
-    router.push(`/simulasi/paket1/simulasi${selectedSimulasi}`);
+    router.push(`/simulasi/paket1/simulasi${selectedSimulasi}/persiapan?section=mendengarkan`);
   };
 
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 interface Question {
@@ -21,6 +21,7 @@ interface Question {
 
 export default function Simulasi1Page() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>([]);
@@ -30,6 +31,7 @@ export default function Simulasi1Page() {
   const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 minutes in seconds
   const [showResults, setShowResults] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showPreparation, setShowPreparation] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Load questions
@@ -43,6 +45,15 @@ export default function Simulasi1Page() {
         const data = await response.json();
         setQuestions(data);
         setAnswers(new Array(data.length).fill(null));
+        
+        // Check if coming from a specific section
+        const sectionParam = searchParams.get("section");
+        if (sectionParam && (sectionParam === "mendengarkan" || sectionParam === "kaidah" || sectionParam === "membaca")) {
+          setCurrentSection(sectionParam);
+          const sectionQuestions = data.filter((q: Question) => q.section === sectionParam);
+          const sectionStartIndex = data.findIndex((q: Question) => q.section === sectionParam);
+          setCurrentQuestionIndex(sectionStartIndex);
+        }
       } catch (error) {
         console.error("Error loading questions:", error);
       } finally {
@@ -50,7 +61,7 @@ export default function Simulasi1Page() {
       }
     };
     loadQuestions();
-  }, []);
+  }, [searchParams]);
 
   // Timer
   useEffect(() => {
@@ -95,13 +106,32 @@ export default function Simulasi1Page() {
   };
 
   const handleNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    const currentSectionQuestions = questions.filter(
+      (q) => q.section === currentSection
+    );
+    const currentSectionStartIndex = questions.indexOf(
+      currentSectionQuestions[0]
+    );
+    const currentSectionEndIndex = questions.indexOf(
+      currentSectionQuestions[currentSectionQuestions.length - 1]
+    );
+    
+    // Only move to next if still within current section
+    if (currentQuestionIndex < currentSectionEndIndex) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
   const handlePrevious = () => {
-    if (currentQuestionIndex > 0) {
+    const currentSectionQuestions = questions.filter(
+      (q) => q.section === currentSection
+    );
+    const currentSectionStartIndex = questions.indexOf(
+      currentSectionQuestions[0]
+    );
+    
+    // Only move to previous if still within current section
+    if (currentQuestionIndex > currentSectionStartIndex) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
   };
@@ -116,11 +146,11 @@ export default function Simulasi1Page() {
       );
 
     if (currentSection === "mendengarkan") {
-      setCurrentSection("kaidah");
-      setCurrentQuestionIndex(lastQuestionOfSection + 1);
+      // Redirect to preparation page for Seksi 2
+      router.push("/simulasi/paket1/simulasi1/persiapan?section=kaidah");
     } else if (currentSection === "kaidah") {
-      setCurrentSection("membaca");
-      setCurrentQuestionIndex(lastQuestionOfSection + 1);
+      // Redirect to preparation page for Seksi 3
+      router.push("/simulasi/paket1/simulasi1/persiapan?section=membaca");
     } else {
       setShowResults(true);
     }
@@ -328,6 +358,26 @@ export default function Simulasi1Page() {
   const currentSectionStartIndex = questions.indexOf(
     currentSectionQuestions[0]
   );
+  
+  // Get question number within current section (1-based)
+  const questionNumberInSection = currentQuestionIndex - currentSectionStartIndex + 1;
+  
+  // Get section info
+  const getSectionInfo = (section: string) => {
+    const sectionQuestions = questions.filter((q) => q.section === section);
+    const startIndex = questions.indexOf(sectionQuestions[0]);
+    const endIndex = questions.indexOf(sectionQuestions[sectionQuestions.length - 1]);
+    return { 
+      questions: sectionQuestions, 
+      startIndex, 
+      endIndex,
+      count: sectionQuestions.length 
+    };
+  };
+  
+  const mendengarkanInfo = getSectionInfo("mendengarkan");
+  const kaidahInfo = getSectionInfo("kaidah");
+  const membacaInfo = getSectionInfo("membaca");
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -358,60 +408,108 @@ export default function Simulasi1Page() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-6 flex gap-6">
-        {/* Sidebar - Question Navigator */}
-        <div className="w-64 bg-white rounded-lg shadow-md p-4 h-fit sticky top-24">
-          <h3 className="font-semibold text-gray-800 mb-3">Navigasi Soal</h3>
-          <div className="grid grid-cols-5 gap-2">
-            {questions.map((q, index) => {
-              const isAnswered = answers[index] !== null;
-              const isCurrent = index === currentQuestionIndex;
-              const sectionOrder = ["mendengarkan", "kaidah", "membaca"];
-              const currentSectionIndex = sectionOrder.indexOf(currentSection);
-              const questionSectionIndex = sectionOrder.indexOf(q.section);
-              const isAccessible = questionSectionIndex <= currentSectionIndex;
-
-              return (
-                <button
-                  key={q.id}
-                  onClick={() => handleJumpToQuestion(index)}
-                  disabled={!isAccessible}
-                  className={`aspect-square rounded-lg text-sm font-medium transition-colors ${
-                    isCurrent
-                      ? "bg-purple-600 text-white"
-                      : isAnswered
-                      ? "bg-green-100 text-green-700 hover:bg-green-200"
-                      : isAccessible
-                      ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                      : "bg-gray-50 text-gray-400 cursor-not-allowed"
-                  }`}
-                >
-                  {index + 1}
-                </button>
-              );
-            })}
+        {/* Left Sidebar - Section Navigator */}
+        <div className="w-64 space-y-4">
+          {/* Section 1 - Mendengarkan */}
+          <div className="bg-white rounded-lg shadow-md p-4">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-semibold text-gray-800">Seksi I</h3>
+              <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">
+                {mendengarkanInfo.count} soal
+              </span>
+            </div>
+            <p className="text-sm text-gray-600 mb-2">Mendengarkan</p>
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+              <div
+                className={`h-2 rounded-full transition-all ${
+                  currentSection === "mendengarkan"
+                    ? "bg-purple-600"
+                    : "bg-green-500"
+                }`}
+                style={{
+                  width: `${
+                    (answers.slice(mendengarkanInfo.startIndex, mendengarkanInfo.endIndex + 1).filter((a) => a !== null).length /
+                      mendengarkanInfo.count) *
+                    100
+                  }%`,
+                }}
+              ></div>
+            </div>
+            <p className="text-xs text-gray-500">
+              {answers.slice(mendengarkanInfo.startIndex, mendengarkanInfo.endIndex + 1).filter((a) => a !== null).length}/{mendengarkanInfo.count} terjawab
+            </p>
           </div>
-          <div className="mt-4 space-y-2 text-xs">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-purple-600 rounded"></div>
-              <span>Aktif</span>
+
+          {/* Section 2 - Kaidah */}
+          <div className={`bg-white rounded-lg shadow-md p-4 ${
+            mendengarkanInfo.endIndex < currentQuestionIndex ? "" : "opacity-50"
+          }`}>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-semibold text-gray-800">Seksi II</h3>
+              <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                {kaidahInfo.count} soal
+              </span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-green-100 border border-green-700 rounded"></div>
-              <span>Terjawab</span>
+            <p className="text-sm text-gray-600 mb-2">Merespons Kaidah</p>
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+              <div
+                className={`h-2 rounded-full transition-all ${
+                  currentSection === "kaidah"
+                    ? "bg-blue-600"
+                    : "bg-green-500"
+                }`}
+                style={{
+                  width: `${
+                    (answers.slice(kaidahInfo.startIndex, kaidahInfo.endIndex + 1).filter((a) => a !== null).length /
+                      kaidahInfo.count) *
+                    100
+                  }%`,
+                }}
+              ></div>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-gray-100 border border-gray-700 rounded"></div>
-              <span>Belum</span>
+            <p className="text-xs text-gray-500">
+              {answers.slice(kaidahInfo.startIndex, kaidahInfo.endIndex + 1).filter((a) => a !== null).length}/{kaidahInfo.count} terjawab
+            </p>
+          </div>
+
+          {/* Section 3 - Membaca */}
+          <div className={`bg-white rounded-lg shadow-md p-4 ${
+            kaidahInfo.endIndex < currentQuestionIndex ? "" : "opacity-50"
+          }`}>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-semibold text-gray-800">Seksi III</h3>
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+                {membacaInfo.count} soal
+              </span>
             </div>
+            <p className="text-sm text-gray-600 mb-2">Membaca</p>
+            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+              <div
+                className="bg-green-600 h-2 rounded-full transition-all"
+                style={{
+                  width: `${
+                    (answers.slice(membacaInfo.startIndex, membacaInfo.endIndex + 1).filter((a) => a !== null).length /
+                      membacaInfo.count) *
+                    100
+                  }%`,
+                }}
+              ></div>
+            </div>
+            <p className="text-xs text-gray-500">
+              {answers.slice(membacaInfo.startIndex, membacaInfo.endIndex + 1).filter((a) => a !== null).length}/{membacaInfo.count} terjawab
+            </p>
           </div>
         </div>
 
         {/* Main Content */}
         <div className="flex-1">
           <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <div className="mb-4">
+            <div className="mb-4 flex items-center justify-between">
               <span className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                Soal {currentQuestionIndex + 1} dari {questions.length}
+                Soal {questionNumberInSection} dari {currentSectionQuestions.length}
+              </span>
+              <span className="text-sm text-gray-500">
+                Total: {currentQuestionIndex + 1}/{questions.length}
               </span>
             </div>
 
@@ -531,7 +629,7 @@ export default function Simulasi1Page() {
           <div className="flex justify-between items-center">
             <button
               onClick={handlePrevious}
-              disabled={currentQuestionIndex === 0}
+              disabled={currentQuestionIndex === currentSectionStartIndex}
               className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               ← Sebelumnya
@@ -550,12 +648,55 @@ export default function Simulasi1Page() {
             ) : (
               <button
                 onClick={handleNext}
-                disabled={currentQuestionIndex === questions.length - 1}
+                disabled={currentQuestionIndex === currentSectionStartIndex + currentSectionQuestions.length - 1}
                 className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 Selanjutnya →
               </button>
             )}
+          </div>
+        </div>
+
+        {/* Right Sidebar - Question Numbers */}
+        <div className="w-48 bg-white rounded-lg shadow-md p-4 h-fit sticky top-24">
+          <h3 className="font-semibold text-gray-800 mb-3 text-sm">Navigasi Soal</h3>
+          <div className="grid grid-cols-4 gap-2">
+            {currentSectionQuestions.map((q, idx) => {
+              const absoluteIndex = currentSectionStartIndex + idx;
+              const isAnswered = answers[absoluteIndex] !== null;
+              const isCurrent = absoluteIndex === currentQuestionIndex;
+              const displayNumber = idx + 1; // Reset numbering per section
+
+              return (
+                <button
+                  key={q.id}
+                  onClick={() => setCurrentQuestionIndex(absoluteIndex)}
+                  className={`aspect-square rounded-lg text-sm font-medium transition-colors ${
+                    isCurrent
+                      ? "bg-purple-600 text-white"
+                      : isAnswered
+                      ? "bg-green-100 text-green-700 hover:bg-green-200"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  {displayNumber}
+                </button>
+              );
+            })}
+          </div>
+          <div className="mt-4 space-y-2 text-xs">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-purple-600 rounded"></div>
+              <span>Aktif</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-green-100 border border-green-700 rounded"></div>
+              <span>Terjawab</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-gray-100 border border-gray-700 rounded"></div>
+              <span>Belum</span>
+            </div>
           </div>
         </div>
       </div>
