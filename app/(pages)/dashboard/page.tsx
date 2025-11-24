@@ -221,7 +221,7 @@ export default function DashboardPage() {
                   key={session.id}
                   className="flex items-center gap-4 p-4 bg-gray-50 border-3 border-black rounded-xl hover:bg-gray-100 transition"
                 >
-                  <div className="w-12 h-12 bg-[#C7E9FF] border-3 border-black rounded-xl flex items-center justify-center font-black flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#C7E9FF] border-3 border-black rounded-xl flex items-center justify-center font-black shrink-0">
                     S{session.section_number}
                   </div>
                   <div className="flex-1 min-w-0">

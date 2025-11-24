@@ -172,7 +172,7 @@ export default function Home() {
 
                   {/* Next Lesson */}
                   <div className="bg-[#FFB3D9] border-3 border-black p-4 rounded-2xl flex items-center gap-3 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer">
-                    <div className="w-12 h-12 bg-[#FF6B6B] border-3 border-black rounded-xl flex items-center justify-center font-black flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#FF6B6B] border-3 border-black rounded-xl flex items-center justify-center font-black shrink-0">
                       S1
                     </div>
                     <div className="flex-1">
@@ -287,7 +287,7 @@ export default function Home() {
               <div className="space-y-3 mb-8">
                 {['S1: Mendengarkan', 'S2: Merespons Kaidah', 'S3: Membaca', 'Skor Langsung'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span className="font-bold text-sm">{item}</span>
@@ -316,7 +316,7 @@ export default function Home() {
               <div className="space-y-3 mb-8">
                 {['Semua di Paket 1', 'S4: Menulis', 'AI Review Tulisan', 'Nilai keluar cepat'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span className="font-bold text-sm">{item}</span>

@@ -53,7 +53,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="h-screen overflow-hidden bg-[#FFF8F0] flex flex-col text-gray-700">
       {/* Mobile Header */}
-      <div className="lg:hidden sticky top-0 z-50 bg-white border-b-4 border-black flex-shrink-0">
+      <div className="lg:hidden sticky top-0 z-50 bg-white border-b-4 border-black shrink-0">
         <div className="flex items-center justify-between px-4 py-3">
           {/* Logo */}
           <Link href="/dashboard" className="flex items-center gap-2">
@@ -103,9 +103,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
       <div className="flex flex-1 overflow-hidden">
         {/* Desktop Sidebar - Fixed Height with Scroll */}
-        <aside className="hidden lg:flex lg:flex-col w-64 h-screen bg-white border-r-4 border-black flex-shrink-0">
+        <aside className="hidden lg:flex lg:flex-col w-64 h-screen bg-white border-r-4 border-black shrink-0">
           {/* Logo - Fixed */}
-          <div className="p-6 border-b-4 border-black flex-shrink-0">
+          <div className="p-6 border-b-4 border-black shrink-0">
             <Link href="/dashboard" className="flex items-center gap-3">
               <div className="w-12 h-12 bg-[#FF6B6B] rounded-xl rotate-6 border-4 border-black flex items-center justify-center">
                 <span className="text-white font-black text-xl -rotate-6">T</span>
@@ -118,7 +118,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </div>
 
           {/* User Info - Fixed */}
-          <div className="p-4 border-b-4 border-black bg-[#C7E9FF] flex-shrink-0">
+          <div className="p-4 border-b-4 border-black bg-[#C7E9FF] shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-[#FF6B6B] border-3 border-black rounded-xl flex items-center justify-center font-black text-white text-lg">
                 {profile?.full_name?.[0]?.toUpperCase() || 'U'}
@@ -153,7 +153,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           </nav>
 
           {/* Logout Button - Fixed */}
-          <div className="p-4 border-t-4 border-black bg-white flex-shrink-0">
+          <div className="p-4 border-t-4 border-black bg-white shrink-0">
             <button
               onClick={handleLogout}
               className="w-full flex items-center gap-3 px-4 py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl font-black border-3 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 transition-all"

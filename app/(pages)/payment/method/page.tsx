@@ -79,7 +79,7 @@ export default function PaymentMethodPage() {
             }`}
           >
             <div className="flex items-center gap-6">
-              <div className="w-20 h-20 bg-[#C7E9FF] border-4 border-black rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
+              <div className="w-20 h-20 bg-[#C7E9FF] border-4 border-black rounded-2xl flex items-center justify-center text-4xl shrink-0">
                 📱
               </div>
               <div className="flex-1">
@@ -89,7 +89,7 @@ export default function PaymentMethodPage() {
                 </p>
               </div>
               {selectedMethod === 'qris' && (
-                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center shrink-0">
                   <span className="text-white text-xl">✓</span>
                 </div>
               )}
@@ -106,7 +106,7 @@ export default function PaymentMethodPage() {
             }`}
           >
             <div className="flex items-center gap-6">
-              <div className="w-20 h-20 bg-[#FFB3D9] border-4 border-black rounded-2xl flex items-center justify-center text-4xl flex-shrink-0">
+              <div className="w-20 h-20 bg-[#FFB3D9] border-4 border-black rounded-2xl flex items-center justify-center text-4xl shrink-0">
                 🏦
               </div>
               <div className="flex-1">
@@ -116,7 +116,7 @@ export default function PaymentMethodPage() {
                 </p>
               </div>
               {selectedMethod === 'bank_bsi' && (
-                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center shrink-0">
                   <span className="text-white text-xl">✓</span>
                 </div>
               )}
