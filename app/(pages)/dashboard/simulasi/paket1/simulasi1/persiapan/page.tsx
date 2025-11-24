@@ -155,12 +155,6 @@ export default function PersiapanPage() {
             Gunakan waktu ini untuk membaca petunjuk dengan seksama
           </p>
         </div>
-            </p>
-            <p className="text-white text-6xl font-bold">{formatTime(timeLeft)}</p>
-            <p className="text-purple-100 text-sm mt-2">
-              Gunakan waktu ini untuk membaca petunjuk dengan seksama
-            </p>
-          </div>
 
         {/* Instructions */}
         <div className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
