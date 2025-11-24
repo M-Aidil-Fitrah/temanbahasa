@@ -342,7 +342,7 @@ export default function Home() {
               <div className="space-y-3 mb-8">
                 {['Semua di Paket 2', 'S5: Berbicara', 'AI Analisis Suara', 'Nilai keluar cepat'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span className="font-bold text-sm">{item}</span>
