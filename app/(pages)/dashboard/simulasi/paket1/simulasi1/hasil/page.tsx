@@ -27,8 +27,37 @@ export default function HasilSimulasiPage() {
   const [loading, setLoading] = useState(true);
   const [openSection, setOpenSection] = useState<number | null>(0);
 
+  // Prevent copy, select, and context menu
+  const preventCopy = (e: React.MouseEvent | React.KeyboardEvent | React.ClipboardEvent) => {
+    e.preventDefault();
+    return false;
+  };
+
+  // Prevent keyboard shortcuts (Ctrl+C, Ctrl+A, Ctrl+X, etc.)
+  const preventKeyboardShortcuts = (e: React.KeyboardEvent) => {
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      (e.key === 'c' || e.key === 'C' || 
+       e.key === 'x' || e.key === 'X' || 
+       e.key === 'a' || e.key === 'A' ||
+       e.key === 'u' || e.key === 'U' ||
+       e.key === 's' || e.key === 'S')
+    ) {
+      e.preventDefault();
+      return false;
+    }
+    // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (
+      e.key === 'F12' ||
+      ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+    ) {
+      e.preventDefault();
+      return false;
+    }
+  };
+
+  // Ambil data dari localStorage
   useEffect(() => {
-    // Ambil data dari localStorage
     const storedQuestions = localStorage.getItem("simulasi1_questions");
     const storedAnswers = localStorage.getItem("simulasi1_answers");
 
@@ -41,6 +70,35 @@ export default function HasilSimulasiPage() {
     }
     setLoading(false);
   }, [router]);
+
+  // Add global keyboard event listeners
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        (e.ctrlKey || e.metaKey) &&
+        (e.key === 'c' || e.key === 'C' || 
+         e.key === 'x' || e.key === 'X' || 
+         e.key === 'a' || e.key === 'A' ||
+         e.key === 'u' || e.key === 'U' ||
+         e.key === 's' || e.key === 'S')
+      ) {
+        e.preventDefault();
+        return false;
+      }
+      if (
+        e.key === 'F12' ||
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const calculateScore = () => {
     let correct = 0;
@@ -105,7 +163,14 @@ export default function HasilSimulasiPage() {
 
   return (
     <DashboardLayout>
-      <div className="min-h-screen bg-[#FFF8F0]">
+      <div 
+        className="min-h-screen bg-[#FFF8F0] select-none"
+        onContextMenu={preventCopy}
+        onCopy={preventCopy}
+        onCut={preventCopy}
+        onDragStart={preventCopy}
+        onKeyDown={preventKeyboardShortcuts}
+      >
       {/* Header */}
       <div className="bg-white border-b-4 border-black sticky top-0 z-40 shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
         <div className="max-w-7xl mx-auto px-4 py-4">
@@ -179,20 +244,24 @@ export default function HasilSimulasiPage() {
               <div
                 key={q.id}
                 id={`question-${index}`}
-                className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] select-none"
+                onCopy={preventCopy}
+                onCut={preventCopy}
+                onContextMenu={preventCopy}
+                onDragStart={preventCopy}
               >
                 {/* Question Header */}
-                <div className="mb-6 flex items-start justify-between">
-                  <div>
-                    <span className="inline-block px-4 py-2 bg-[#FFD93D] border-2 border-black text-gray-900 rounded-full text-sm font-black mb-3">
+                <div className="mb-6 flex items-start justify-between select-none">
+                  <div className="select-none">
+                    <span className="inline-block px-4 py-2 bg-[#FFD93D] border-2 border-black text-gray-900 rounded-full text-sm font-black mb-3 select-none">
                       Soal {index + 1}
                     </span>
-                    <p className="text-sm font-bold text-gray-600">
+                    <p className="text-sm font-bold text-gray-600 select-none">
                       Seksi: {q.section === "mendengarkan" ? "I - Mendengarkan" : q.section === "kaidah" ? "II - Merespons Kaidah" : "III - Membaca"}
                     </p>
                   </div>
                   <span
-                    className={`px-4 py-2 rounded-xl border-4 border-black font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${
+                    className={`px-4 py-2 rounded-xl border-4 border-black font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] select-none ${
                       isCorrect
                         ? "bg-[#B5F0C8] text-green-700"
                         : "bg-[#FFB3D9] text-red-700"
@@ -203,29 +272,29 @@ export default function HasilSimulasiPage() {
                 </div>
 
                 {/* Question Content */}
-                <div className="mb-6">
+                <div className="mb-6 select-none">
                   {q.section === "kaidah" && q.statementX ? (
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-[#C7E9FF] pl-4 bg-[#C7E9FF]/10 p-4 rounded-r-xl">
-                        <p className="font-black text-gray-900 mb-2">Pernyataan X:</p>
-                        <p className="text-gray-700 font-bold mb-3">{q.statementX}</p>
+                    <div className="space-y-4 select-none">
+                      <div className="border-l-4 border-[#C7E9FF] pl-4 bg-[#C7E9FF]/10 p-4 rounded-r-xl select-none">
+                        <p className="font-black text-gray-900 mb-2 select-none">Pernyataan X:</p>
+                        <p className="text-gray-700 font-bold mb-3 select-none">{q.statementX}</p>
                         {q.optionsX && (
-                          <div className="space-y-1 ml-4">
+                          <div className="space-y-1 ml-4 select-none">
                             {q.optionsX.map((option, i) => (
-                              <p key={i} className="text-gray-600 font-bold text-sm">
+                              <p key={i} className="text-gray-600 font-bold text-sm select-none">
                                 ({String.fromCharCode(65 + i)}) {option}
                               </p>
                             ))}
                           </div>
                         )}
                       </div>
-                      <div className="border-l-4 border-[#FFD93D] pl-4 bg-[#FFD93D]/10 p-4 rounded-r-xl">
-                        <p className="font-black text-gray-900 mb-2">Pernyataan Y:</p>
-                        <p className="text-gray-700 font-bold mb-3">{q.statementY}</p>
+                      <div className="border-l-4 border-[#FFD93D] pl-4 bg-[#FFD93D]/10 p-4 rounded-r-xl select-none">
+                        <p className="font-black text-gray-900 mb-2 select-none">Pernyataan Y:</p>
+                        <p className="text-gray-700 font-bold mb-3 select-none">{q.statementY}</p>
                         {q.optionsY && (
-                          <div className="space-y-1 ml-4">
+                          <div className="space-y-1 ml-4 select-none">
                             {q.optionsY.map((option, i) => (
-                              <p key={i} className="text-gray-600 font-bold text-sm">
+                              <p key={i} className="text-gray-600 font-bold text-sm select-none">
                                 ({String.fromCharCode(65 + i)}) {option}
                               </p>
                             ))}
@@ -234,12 +303,12 @@ export default function HasilSimulasiPage() {
                       </div>
                     </div>
                   ) : (
-                    <p className="text-xl text-gray-900 font-black">{q.question}</p>
+                    <p className="text-xl text-gray-900 font-black select-none">{q.question}</p>
                   )}
                 </div>
 
                 {/* Answer Options */}
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-6 select-none">
                   {q.options.map((option, optIndex) => {
                     const isUserAnswer = userAnswer === optIndex;
                     const isCorrectAnswer = q.correct === optIndex;
@@ -247,7 +316,7 @@ export default function HasilSimulasiPage() {
                     return (
                       <div
                         key={optIndex}
-                        className={`p-4 rounded-xl border-4 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${
+                        className={`p-4 rounded-xl border-4 font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] select-none ${
                           isCorrectAnswer
                             ? "bg-[#B5F0C8] border-green-700"
                             : isUserAnswer && !isCorrectAnswer
@@ -255,9 +324,9 @@ export default function HasilSimulasiPage() {
                             : "bg-white border-black"
                         }`}
                       >
-                        <div className="flex items-start gap-3">
+                        <div className="flex items-start gap-3 select-none">
                           <div
-                            className={`shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center font-black ${
+                            className={`shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center font-black select-none ${
                               isCorrectAnswer
                                 ? "bg-green-700 text-white border-green-900"
                                 : isUserAnswer && !isCorrectAnswer
@@ -267,20 +336,20 @@ export default function HasilSimulasiPage() {
                           >
                             {String.fromCharCode(65 + optIndex)}
                           </div>
-                          <div className="flex-1">
-                            <p className={`pt-1.5 ${
+                          <div className="flex-1 select-none">
+                            <p className={`pt-1.5 select-none ${
                               isUserAnswer && !isCorrectAnswer
                                 ? "text-white"
                                 : "text-gray-900"
                             }`}>{option}</p>
                             {isCorrectAnswer && (
-                              <p className="text-sm font-black text-green-700 mt-2 flex items-center gap-1">
+                              <p className="text-sm font-black text-green-700 mt-2 flex items-center gap-1 select-none">
                                 <span className="text-lg">✓</span>
                                 Jawaban yang benar
                               </p>
                             )}
                             {isUserAnswer && !isCorrectAnswer && (
-                              <p className="text-sm font-black text-white mt-2 flex items-center gap-1">
+                              <p className="text-sm font-black text-white mt-2 flex items-center gap-1 select-none">
                                 <span className="text-lg">✗</span>
                                 Jawaban Anda (SALAH)
                               </p>
@@ -293,12 +362,12 @@ export default function HasilSimulasiPage() {
                 </div>
 
                 {/* Explanation */}
-                <div className="bg-[#FFD93D]/20 border-4 border-black rounded-2xl p-5">
-                  <p className="font-black text-gray-900 mb-3 flex items-center gap-2">
+                <div className="bg-[#FFD93D]/20 border-4 border-black rounded-2xl p-5 select-none">
+                  <p className="font-black text-gray-900 mb-3 flex items-center gap-2 select-none">
                     <span>💡</span>
                     Pembahasan:
                   </p>
-                  <p className="font-bold text-gray-700">{q.explanation}</p>
+                  <p className="font-bold text-gray-700 select-none">{q.explanation}</p>
                 </div>
               </div>
             );

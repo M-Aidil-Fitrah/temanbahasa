@@ -33,6 +33,35 @@ export default function Simulasi1Page() {
   const [showPreparation, setShowPreparation] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  // Prevent copy, select, and context menu
+  const preventCopy = (e: React.MouseEvent | React.KeyboardEvent | React.ClipboardEvent) => {
+    e.preventDefault();
+    return false;
+  };
+
+  // Prevent keyboard shortcuts (Ctrl+C, Ctrl+A, Ctrl+X, etc.)
+  const preventKeyboardShortcuts = (e: React.KeyboardEvent) => {
+    if (
+      (e.ctrlKey || e.metaKey) &&
+      (e.key === 'c' || e.key === 'C' || 
+       e.key === 'x' || e.key === 'X' || 
+       e.key === 'a' || e.key === 'A' ||
+       e.key === 'u' || e.key === 'U' ||
+       e.key === 's' || e.key === 'S')
+    ) {
+      e.preventDefault();
+      return false;
+    }
+    // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (
+      e.key === 'F12' ||
+      ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+    ) {
+      e.preventDefault();
+      return false;
+    }
+  };
+
   // Load questions
   useEffect(() => {
     const loadQuestions = async () => {
@@ -61,6 +90,35 @@ export default function Simulasi1Page() {
     };
     loadQuestions();
   }, [searchParams]);
+
+  // Add global keyboard event listeners
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        (e.ctrlKey || e.metaKey) &&
+        (e.key === 'c' || e.key === 'C' || 
+         e.key === 'x' || e.key === 'X' || 
+         e.key === 'a' || e.key === 'A' ||
+         e.key === 'u' || e.key === 'U' ||
+         e.key === 's' || e.key === 'S')
+      ) {
+        e.preventDefault();
+        return false;
+      }
+      if (
+        e.key === 'F12' ||
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   // Timer
   useEffect(() => {
@@ -221,7 +279,14 @@ export default function Simulasi1Page() {
   const membacaInfo = getSectionInfo("membaca");
 
   return (
-    <div className="min-h-screen bg-[#FFF8F0]">
+    <div 
+      className="min-h-screen bg-[#FFF8F0] select-none"
+      onContextMenu={preventCopy}
+      onCopy={preventCopy}
+      onCut={preventCopy}
+      onDragStart={preventCopy}
+      onKeyDown={preventKeyboardShortcuts}
+    >
       {/* Header */}
       <div className="bg-white border-b-4 border-black sticky top-0 z-40 shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -392,37 +457,43 @@ export default function Simulasi1Page() {
               )}
 
             {/* Question */}
-            <div className="mb-6">
+            <div 
+              className="mb-6 select-none"
+              onCopy={preventCopy}
+              onCut={preventCopy}
+              onContextMenu={preventCopy}
+              onDragStart={preventCopy}
+            >
               {currentQuestion.section === "kaidah" ? (
-                <div className="space-y-4">
-                  <div className="border-l-4 border-[#C7E9FF] pl-4 bg-[#C7E9FF]/10 p-4 rounded-r-xl">
-                    <p className="font-black text-gray-900 mb-2">
+                <div className="space-y-4 select-none">
+                  <div className="border-l-4 border-[#C7E9FF] pl-4 bg-[#C7E9FF]/10 p-4 rounded-r-xl select-none">
+                    <p className="font-black text-gray-900 mb-2 select-none">
                       Pernyataan X:
                     </p>
-                    <p className="text-gray-700 font-bold mb-3">
+                    <p className="text-gray-700 font-bold mb-3 select-none">
                       {currentQuestion.statementX}
                     </p>
                     {currentQuestion.optionsX && (
-                      <div className="space-y-1 ml-4">
+                      <div className="space-y-1 ml-4 select-none">
                         {currentQuestion.optionsX.map((option, index) => (
-                          <p key={index} className="text-gray-600 font-bold text-sm">
+                          <p key={index} className="text-gray-600 font-bold text-sm select-none">
                             ({String.fromCharCode(65 + index)}) {option}
                           </p>
                         ))}
                       </div>
                     )}
                   </div>
-                  <div className="border-l-4 border-[#FFD93D] pl-4 bg-[#FFD93D]/10 p-4 rounded-r-xl">
-                    <p className="font-black text-gray-900 mb-2">
+                  <div className="border-l-4 border-[#FFD93D] pl-4 bg-[#FFD93D]/10 p-4 rounded-r-xl select-none">
+                    <p className="font-black text-gray-900 mb-2 select-none">
                       Pernyataan Y:
                     </p>
-                    <p className="text-gray-700 font-bold mb-3">
+                    <p className="text-gray-700 font-bold mb-3 select-none">
                       {currentQuestion.statementY}
                     </p>
                     {currentQuestion.optionsY && (
-                      <div className="space-y-1 ml-4">
+                      <div className="space-y-1 ml-4 select-none">
                         {currentQuestion.optionsY.map((option, index) => (
-                          <p key={index} className="text-gray-600 font-bold text-sm">
+                          <p key={index} className="text-gray-600 font-bold text-sm select-none">
                             ({String.fromCharCode(65 + index)}) {option}
                           </p>
                         ))}
@@ -431,27 +502,31 @@ export default function Simulasi1Page() {
                   </div>
                 </div>
               ) : (
-                <p className="text-xl text-gray-900 font-black">
+                <p className="text-xl text-gray-900 font-black select-none">
                   {currentQuestion.question}
                 </p>
               )}
             </div>
 
             {/* Options */}
-            <div className="space-y-3">
+            <div className="space-y-3 select-none">
               {currentQuestion.options.map((option, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswer(index)}
-                  className={`w-full text-left p-4 rounded-xl border-4 border-black transition-all font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 ${
+                  onContextMenu={preventCopy}
+                  onCopy={preventCopy}
+                  onCut={preventCopy}
+                  onDragStart={preventCopy}
+                  className={`w-full text-left p-4 rounded-xl border-4 border-black transition-all font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 select-none ${
                     answers[currentQuestionIndex] === index
                       ? "bg-[#FFD93D]"
                       : "bg-white"
                   }`}
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 select-none">
                     <div
-                      className={`shrink-0 w-10 h-10 rounded-full border-2 border-black flex items-center justify-center font-black ${
+                      className={`shrink-0 w-10 h-10 rounded-full border-2 border-black flex items-center justify-center font-black select-none ${
                         answers[currentQuestionIndex] === index
                           ? "bg-gray-900 text-white"
                           : "bg-white text-gray-900"
@@ -459,7 +534,7 @@ export default function Simulasi1Page() {
                     >
                       {String.fromCharCode(65 + index)}
                     </div>
-                    <p className="flex-1 text-gray-900 pt-1.5">{option}</p>
+                    <p className="flex-1 text-gray-900 pt-1.5 select-none">{option}</p>
                   </div>
                 </button>
               ))}
