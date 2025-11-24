@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase/client";
-import { logoutUser } from "@/app/actions/auth";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -38,8 +37,25 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   };
 
   const handleLogout = async () => {
-    await logoutUser();
-    router.push('/');
+    try {
+      // Sign out dari Supabase
+      const { error } = await supabase.auth.signOut();
+      
+      if (error) {
+        console.error('Logout error:', error);
+        alert('Error saat logout: ' + error.message);
+        return;
+      }
+
+      console.log('✅ Logout successful');
+      
+      // Redirect ke home page
+      window.location.href = '/';
+      
+    } catch (error: any) {
+      console.error('Logout failed:', error);
+      alert('Logout gagal: ' + error.message);
+    }
   };
 
   const navItems = [

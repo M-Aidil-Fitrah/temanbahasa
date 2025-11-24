@@ -19,9 +19,9 @@ export default function CheckoutPage() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   const packages: Record<string, any> = {
-    paket_1: { name: 'Paket 1 - Dasar', price: 99000 },
-    paket_2: { name: 'Paket 2 - Menengah', price: 149000 },
-    paket_3: { name: 'Paket 3 - Lengkap', price: 199000 }
+    paket_1: { name: 'Paket 1 - Dasar', price: 13000 },
+    paket_2: { name: 'Paket 2 - Menengah', price: 15000 },
+    paket_3: { name: 'Paket 3 - Lengkap', price: 17000 }
   };
 
   const selectedPackage = packageId ? packages[packageId] : null;
@@ -43,11 +43,11 @@ export default function CheckoutPage() {
     bank_bsi: {
       title: 'Bank BSI',
       icon: '🏦',
-      accountNumber: '1234567890',
+      accountNumber: '7250815179',
       accountName: 'TemanBahasa Platform',
       instructions: [
         'Transfer ke rekening BSI berikut:',
-        'No. Rekening: 1234567890',
+        'No. Rekening: 7250815179',
         'a.n. TemanBahasa Platform',
         `Nominal: Rp ${selectedPackage?.price.toLocaleString('id-ID')}`,
         'Screenshot bukti transfer',
@@ -222,7 +222,7 @@ export default function CheckoutPage() {
                 <div className="bg-white border-4 border-black rounded-2xl p-4 inline-block">
                   {/* Placeholder - ganti dengan QR code asli */}
                   <div className="w-64 h-64 bg-gray-200 flex items-center justify-center font-black text-gray-500">
-                    QR CODE
+                   <img src="/qris.png" alt="QR Code" />
                   </div>
                 </div>
                 <p className="font-bold text-sm mt-4">Total: Rp {selectedPackage.price.toLocaleString('id-ID')}</p>
