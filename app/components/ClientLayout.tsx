@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
-import Navbar from "./Navbar";
 
 export default function ClientLayout({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
@@ -16,7 +15,6 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <Navbar />
       {children}
     </>
   );
