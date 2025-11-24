@@ -76,8 +76,22 @@ export default function Simulasi1Page() {
         }
         const data = await response.json();
         setQuestions(data);
-        setAnswers(new Array(data.length).fill(null));
-        setMarkedQuestions(new Array(data.length).fill(false));
+        
+        // Load saved answers and marked questions from localStorage
+        const savedAnswers = localStorage.getItem("simulasi1_answers_temp");
+        const savedMarked = localStorage.getItem("simulasi1_marked_temp");
+        
+        if (savedAnswers) {
+          setAnswers(JSON.parse(savedAnswers));
+        } else {
+          setAnswers(new Array(data.length).fill(null));
+        }
+        
+        if (savedMarked) {
+          setMarkedQuestions(JSON.parse(savedMarked));
+        } else {
+          setMarkedQuestions(new Array(data.length).fill(false));
+        }
         
         // Check if coming from a specific section
         const sectionParam = searchParams.get("section");
@@ -165,12 +179,16 @@ export default function Simulasi1Page() {
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = optionIndex;
     setAnswers(newAnswers);
+    // Save to localStorage immediately
+    localStorage.setItem("simulasi1_answers_temp", JSON.stringify(newAnswers));
   };
 
   const handleToggleMark = () => {
     const newMarked = [...markedQuestions];
     newMarked[currentQuestionIndex] = !newMarked[currentQuestionIndex];
     setMarkedQuestions(newMarked);
+    // Save to localStorage immediately
+    localStorage.setItem("simulasi1_marked_temp", JSON.stringify(newMarked));
   };
 
   const handlePlayAudio = (audioPath: string) => {
@@ -250,6 +268,10 @@ export default function Simulasi1Page() {
   const confirmSectionComplete = () => {
     setShowConfirmModal(false);
     
+    // Save current state before transitioning
+    localStorage.setItem("simulasi1_answers_temp", JSON.stringify(answers));
+    localStorage.setItem("simulasi1_marked_temp", JSON.stringify(markedQuestions));
+    
     if (currentSection === "mendengarkan") {
       // Redirect to preparation page for Seksi 2
       router.push("/dashboard/simulasi/paket1/simulasi1/persiapan?section=kaidah");
@@ -257,9 +279,12 @@ export default function Simulasi1Page() {
       // Redirect to preparation page for Seksi 3
       router.push("/dashboard/simulasi/paket1/simulasi1/persiapan?section=membaca");
     } else {
-      // Simpan data ke localStorage dan redirect ke halaman hasil
+      // Simpan data final ke localStorage dan redirect ke halaman hasil
       localStorage.setItem("simulasi1_questions", JSON.stringify(questions));
       localStorage.setItem("simulasi1_answers", JSON.stringify(answers));
+      // Clean up temporary data
+      localStorage.removeItem("simulasi1_answers_temp");
+      localStorage.removeItem("simulasi1_marked_temp");
       router.push("/dashboard/simulasi/paket1/simulasi1/hasil");
     }
   };
