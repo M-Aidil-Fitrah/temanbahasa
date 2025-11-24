@@ -25,6 +25,7 @@ export default function Simulasi1Page() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>([]);
+  const [markedQuestions, setMarkedQuestions] = useState<boolean[]>([]);
   const [currentSection, setCurrentSection] = useState<
     "mendengarkan" | "kaidah" | "membaca"
   >("mendengarkan");
@@ -73,6 +74,7 @@ export default function Simulasi1Page() {
         const data = await response.json();
         setQuestions(data);
         setAnswers(new Array(data.length).fill(null));
+        setMarkedQuestions(new Array(data.length).fill(false));
         
         // Check if coming from a specific section
         const sectionParam = searchParams.get("section");
@@ -160,6 +162,12 @@ export default function Simulasi1Page() {
     const newAnswers = [...answers];
     newAnswers[currentQuestionIndex] = optionIndex;
     setAnswers(newAnswers);
+  };
+
+  const handleToggleMark = () => {
+    const newMarked = [...markedQuestions];
+    newMarked[currentQuestionIndex] = !newMarked[currentQuestionIndex];
+    setMarkedQuestions(newMarked);
   };
 
   const handleNext = () => {
@@ -414,9 +422,21 @@ export default function Simulasi1Page() {
               <span className="inline-block px-4 py-2 bg-[#FFD93D] border-2 border-black text-gray-900 rounded-full text-sm font-black">
                 Soal {questionNumberInSection} dari {currentSectionQuestions.length}
               </span>
-              <span className="text-sm font-bold text-gray-600">
-                Total: {currentQuestionIndex + 1}/{questions.length}
-              </span>
+              <div className="flex items-center gap-3">
+                <span className="text-sm font-bold text-gray-600">
+                  Total: {currentQuestionIndex + 1}/{questions.length}
+                </span>
+                <button
+                  onClick={handleToggleMark}
+                  className={`px-4 py-2 border-3 border-black rounded-xl font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 ${
+                    markedQuestions[currentQuestionIndex]
+                      ? "bg-[#FFB3D9] text-gray-900"
+                      : "bg-white text-gray-600"
+                  }`}
+                >
+                  {markedQuestions[currentQuestionIndex] ? "🚩 Ditandai" : "🏴 Tandai"}
+                </button>
+              </div>
             </div>
 
             {/* Audio Player for Seksi 1 */}
@@ -582,37 +602,47 @@ export default function Simulasi1Page() {
                 const absoluteIndex = currentSectionStartIndex + idx;
                 const isAnswered = answers[absoluteIndex] !== null;
                 const isCurrent = absoluteIndex === currentQuestionIndex;
+                const isMarked = markedQuestions[absoluteIndex];
                 const displayNumber = idx + 1; // Reset numbering per section
 
                 return (
                   <button
                     key={q.id}
                     onClick={() => setCurrentQuestionIndex(absoluteIndex)}
-                    className={`aspect-square rounded-xl border-2 border-black text-sm font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 ${
+                    className={`aspect-square rounded-xl border-2 border-black text-sm font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 relative ${
                       isCurrent
                         ? "bg-[#FFD93D] text-gray-900"
+                        : isMarked
+                        ? "bg-[#FFB3D9] text-gray-900"
                         : isAnswered
                         ? "bg-[#B5F0C8] text-gray-900"
                         : "bg-white text-gray-900"
                     }`}
                   >
                     {displayNumber}
+                    {isMarked && !isCurrent && (
+                      <span className="absolute -top-1 -right-1 text-xs">🚩</span>
+                    )}
                 </button>
               );
             })}
           </div>
-          <div className="mt-6 space-y-3 text-sm font-bold">
+          <div className="mt-6 space-y-3 text-sm font-bold text-gray-900">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 bg-[#FFD93D] border-2 border-black rounded-lg"></div>
-              <span>Aktif</span>
+              <span className="text-gray-900">Aktif</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-[#FFB3D9] border-2 border-black rounded-lg"></div>
+              <span className="text-gray-900">Ditandai </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 bg-[#B5F0C8] border-2 border-black rounded-lg"></div>
-              <span>Terjawab</span>
+              <span className="text-gray-900">Terjawab</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 bg-white border-2 border-black rounded-lg"></div>
-              <span>Belum</span>
+              <span className="text-gray-900">Belum</span>
             </div>
           </div>
         </div>
