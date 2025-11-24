@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import DashboardLayout from "@/app/components/DashboardLayout";
 
 interface SectionInfo {
   section: "mendengarkan" | "kaidah" | "membaca";
@@ -9,6 +10,8 @@ interface SectionInfo {
   duration: number;
   instructions: string[];
   tips: string[];
+  icon: string;
+  color: string;
 }
 
 const sectionInfoMap: Record<string, SectionInfo> = {
@@ -16,6 +19,8 @@ const sectionInfoMap: Record<string, SectionInfo> = {
     section: "mendengarkan",
     title: "Seksi I - Mendengarkan",
     duration: 30,
+    icon: "🎧",
+    color: "bg-[#C7E9FF]",
     instructions: [
       "Anda akan mendengarkan beberapa audio rekaman percakapan dan monolog.",
       "Setiap audio hanya dapat diputar sekali untuk setiap soal.",
@@ -34,6 +39,8 @@ const sectionInfoMap: Record<string, SectionInfo> = {
     section: "kaidah",
     title: "Seksi II - Merespons Kaidah",
     duration: 25,
+    icon: "✍️",
+    color: "bg-[#FFD93D]",
     instructions: [
       "Anda akan diberikan dua pernyataan (X dan Y) dengan pilihan jawaban masing-masing.",
       "Tugas Anda adalah menentukan hubungan yang tepat antara kedua pernyataan tersebut.",
@@ -52,6 +59,8 @@ const sectionInfoMap: Record<string, SectionInfo> = {
     section: "membaca",
     title: "Seksi III - Membaca",
     duration: 45,
+    icon: "📖",
+    color: "bg-[#B5F0C8]",
     instructions: [
       "Anda akan membaca berbagai jenis teks seperti artikel, iklan, poster, dan wacana.",
       "Setiap teks disertai dengan beberapa pertanyaan pemahaman.",
@@ -108,45 +117,44 @@ export default function PersiapanPage() {
 
   if (!sectionInfo) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p>Section tidak ditemukan</p>
-      </div>
+      <DashboardLayout>
+        <div className="min-h-screen flex items-center justify-center">
+          <p className="font-black text-xl">Section tidak ditemukan</p>
+        </div>
+      </DashboardLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-purple-50 to-blue-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <div className="inline-block p-4 bg-purple-100 rounded-full mb-4">
-              <svg
-                className="w-12 h-12 text-purple-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
+    <DashboardLayout>
+      <div className="p-6 lg:p-8 space-y-6 text-gray-700">
+        {/* Header Section */}
+        <div className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFD93D] rounded-full opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+          
+          <div className="relative text-center">
+            <div className={`inline-block ${sectionInfo.color} border-4 border-black w-20 h-20 rounded-full flex items-center justify-center text-4xl mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`}>
+              {sectionInfo.icon}
             </div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-3xl lg:text-4xl font-black text-gray-900 mb-2">
               {sectionInfo.title}
             </h1>
-            <p className="text-gray-600">
+            <p className="text-lg font-bold text-gray-600">
               Persiapan sebelum mengerjakan - Waktu: {sectionInfo.duration} menit
             </p>
           </div>
+        </div>
 
-          {/* Countdown Timer */}
-          <div className="bg-linear-to-r from-purple-500 to-blue-500 rounded-xl p-6 mb-8 text-center">
-            <p className="text-white text-sm mb-2 font-medium">
-              Tes akan dimulai dalam:
+        {/* Countdown Timer */}
+        <div className={`${sectionInfo.color} border-4 border-black rounded-3xl p-8 text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]`}>
+          <p className="text-gray-900 text-sm font-bold mb-2">
+            Tes akan dimulai dalam:
+          </p>
+          <p className="text-gray-900 text-7xl font-black mb-2">{formatTime(timeLeft)}</p>
+          <p className="text-gray-700 text-sm font-bold">
+            Gunakan waktu ini untuk membaca petunjuk dengan seksama
+          </p>
+        </div>
             </p>
             <p className="text-white text-6xl font-bold">{formatTime(timeLeft)}</p>
             <p className="text-purple-100 text-sm mt-2">
@@ -154,117 +162,74 @@ export default function PersiapanPage() {
             </p>
           </div>
 
-          {/* Instructions */}
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-              <svg
-                className="w-6 h-6 text-purple-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              Petunjuk Pengerjaan
-            </h2>
-            <div className="bg-blue-50 rounded-lg p-6 space-y-3">
-              {sectionInfo.instructions.map((instruction, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="shrink-0 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-gray-700 pt-0.5">{instruction}</p>
+        {/* Instructions */}
+        <div className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <h2 className="text-2xl font-black mb-6 flex items-center gap-2 text-gray-900">
+            <span className="text-3xl">📋</span>
+            Petunjuk Pengerjaan
+          </h2>
+          <div className="space-y-3">
+            {sectionInfo.instructions.map((instruction, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <div className="shrink-0 w-8 h-8 bg-gray-900 border-2 border-black text-white rounded-full flex items-center justify-center text-sm font-black">
+                  {index + 1}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tips */}
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
-              <svg
-                className="w-6 h-6 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-              Tips & Strategi
-            </h2>
-            <div className="bg-green-50 rounded-lg p-6 space-y-2">
-              {sectionInfo.tips.map((tip, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-green-600 shrink-0 mt-0.5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-gray-700">{tip}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex gap-4">
-            <button
-              onClick={() => router.push("/dashboard/simulasi/paket1")}
-              className="flex-1 px-6 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-            >
-              Batal
-            </button>
-            <button
-              onClick={handleStartNow}
-              className="flex-1 px-6 py-4 bg-linear-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-colors shadow-lg"
-            >
-              Mulai Sekarang
-            </button>
-          </div>
-
-          {/* Additional Info */}
-          <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <div className="flex items-start gap-3">
-              <svg
-                className="w-6 h-6 text-yellow-600 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
-              <div>
-                <p className="font-semibold text-yellow-800 mb-1">Penting!</p>
-                <p className="text-sm text-yellow-700">
-                  Pastikan koneksi internet Anda stabil dan perangkat dalam kondisi baik.
-                  Tes akan dimulai otomatis setelah waktu persiapan habis.
-                </p>
+                <p className="text-gray-700 font-bold pt-1">{instruction}</p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tips */}
+        <div className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <h2 className="text-2xl font-black mb-6 flex items-center gap-2 text-gray-900">
+            <span className="text-3xl">💡</span>
+            Tips & Strategi
+          </h2>
+          <div className="space-y-3">
+            {sectionInfo.tips.map((tip, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <div className="shrink-0 w-6 h-6 bg-[#B5F0C8] border-2 border-black rounded-full flex items-center justify-center mt-0.5">
+                  <span className="text-green-700 font-black text-sm">✓</span>
+                </div>
+                <p className="text-gray-700 font-bold">{tip}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Important Notice */}
+        <div className="bg-[#FFD93D] border-4 border-black rounded-3xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <div className="flex items-start gap-4">
+            <div className="shrink-0 w-12 h-12 bg-[#FF6B6B] border-2 border-black rounded-full flex items-center justify-center">
+              <span className="text-2xl">⚠️</span>
+            </div>
+            <div>
+              <p className="font-black text-gray-900 text-lg mb-2">Penting!</p>
+              <p className="font-bold text-gray-700">
+                Pastikan koneksi internet Anda stabil dan perangkat dalam kondisi baik.
+                Tes akan dimulai otomatis setelah waktu persiapan habis.
+              </p>
             </div>
           </div>
         </div>
+
+        {/* Action Buttons */}
+        <div className="flex gap-4">
+          <button
+            onClick={() => router.push("/dashboard/simulasi/paket1")}
+            className="flex-1 px-6 py-4 bg-white border-4 border-black text-gray-900 rounded-2xl font-black text-lg hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all"
+          >
+            Batal
+          </button>
+          <button
+            onClick={handleStartNow}
+            className="flex-1 px-6 py-4 bg-[#FF6B6B] border-4 border-black text-white rounded-2xl font-black text-lg shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
+          >
+            Mulai Sekarang →
+          </button>
+        </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
