@@ -35,6 +35,7 @@ export default function Simulasi1Page() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playedAudios, setPlayedAudios] = useState<Set<string>>(new Set());
   const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   // Prevent copy, select, and context menu
   const preventCopy = (e: React.MouseEvent | React.KeyboardEvent | React.ClipboardEvent) => {
@@ -226,11 +227,29 @@ export default function Simulasi1Page() {
     const currentSectionQuestions = questions.filter(
       (q) => q.section === currentSection
     );
-    const lastQuestionOfSection =
-      questions.indexOf(
-        currentSectionQuestions[currentSectionQuestions.length - 1]
-      );
+    
+    // Check if all questions in current section are answered
+    const currentSectionStartIndex = questions.indexOf(currentSectionQuestions[0]);
+    const currentSectionEndIndex = questions.indexOf(
+      currentSectionQuestions[currentSectionQuestions.length - 1]
+    );
+    
+    const unansweredInSection = answers
+      .slice(currentSectionStartIndex, currentSectionEndIndex + 1)
+      .filter((a) => a === null).length;
+    
+    if (unansweredInSection > 0) {
+      alert(`Masih ada ${unansweredInSection} soal yang belum dijawab di seksi ini. Silakan jawab semua soal sebelum melanjutkan.`);
+      return;
+    }
+    
+    // Show confirmation modal
+    setShowConfirmModal(true);
+  };
 
+  const confirmSectionComplete = () => {
+    setShowConfirmModal(false);
+    
     if (currentSection === "mendengarkan") {
       // Redirect to preparation page for Seksi 2
       router.push("/dashboard/simulasi/paket1/simulasi1/persiapan?section=kaidah");
@@ -289,6 +308,18 @@ export default function Simulasi1Page() {
   
   // Get question number within current section (1-based)
   const questionNumberInSection = currentQuestionIndex - currentSectionStartIndex + 1;
+  
+  // Check if all questions in current section are answered
+  const currentSectionEndIndex = questions.indexOf(
+    currentSectionQuestions[currentSectionQuestions.length - 1]
+  );
+  const allAnsweredInSection = answers
+    .slice(currentSectionStartIndex, currentSectionEndIndex + 1)
+    .every((a) => a !== null);
+  
+  const unansweredCountInSection = answers
+    .slice(currentSectionStartIndex, currentSectionEndIndex + 1)
+    .filter((a) => a === null).length;
   
   // Check if current question is the first in its audio group (for mendengarkan section)
   const isFirstInAudioGroup = () => {
@@ -603,7 +634,7 @@ export default function Simulasi1Page() {
                       <div className="space-y-1 ml-4 select-none">
                         {currentQuestion.optionsY.map((option, index) => (
                           <p key={index} className="text-gray-600 font-bold text-sm select-none">
-                            ({String.fromCharCode(65 + index)}) {option}
+                            ({String.fromCharCode(67 + index)}) {option}
                           </p>
                         ))}
                       </div>
@@ -662,14 +693,22 @@ export default function Simulasi1Page() {
 
             {currentQuestionIndex ===
             currentSectionStartIndex + currentSectionQuestions.length - 1 ? (
-              <button
-                onClick={handleSectionComplete}
-                className="px-6 py-3 bg-[#B5F0C8] border-4 border-black text-gray-900 rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
-              >
-                {currentSection === "membaca"
-                  ? "Selesai"
-                  : "Lanjut ke Seksi Berikutnya →"}
-              </button>
+              <div className="flex flex-col items-end gap-2">
+                {!allAnsweredInSection && (
+                  <p className="text-sm font-bold text-red-600">
+                    ⚠️ {unansweredCountInSection} soal belum dijawab
+                  </p>
+                )}
+                <button
+                  onClick={handleSectionComplete}
+                  disabled={!allAnsweredInSection}
+                  className="px-6 py-3 bg-[#B5F0C8] border-4 border-black text-gray-900 rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:hover:translate-y-0 transition-all"
+                >
+                  {currentSection === "membaca"
+                    ? "Selesai Simulasi"
+                    : "Lanjut ke Seksi Berikutnya →"}
+                </button>
+              </div>
             ) : (
               <button
                 onClick={handleNext}
@@ -737,6 +776,75 @@ export default function Simulasi1Page() {
         </div>
         </div>
       </div>
+
+      {/* Confirmation Modal */}
+      {showConfirmModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white border-6 border-black rounded-3xl p-8 max-w-md w-full shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] animate-scale-up">
+            {/* Header */}
+            <div className="text-center mb-6">
+              <div className="w-20 h-20 bg-[#FFD93D] border-4 border-black rounded-full flex items-center justify-center mx-auto mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <span className="text-4xl">⚠️</span>
+              </div>
+              <h2 className="text-2xl font-black text-gray-900 mb-2">
+                Konfirmasi Lanjut Seksi
+              </h2>
+              <p className="text-sm font-bold text-gray-600">
+                Pastikan semua jawaban sudah benar
+              </p>
+            </div>
+
+            {/* Content */}
+            <div className="space-y-4 mb-6">
+              {/* Waktu Sisa */}
+              <div className="bg-[#C7E9FF] border-4 border-black rounded-2xl p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <p className="text-sm font-bold text-gray-700 mb-2">Waktu Tersisa Seksi Ini:</p>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-3xl">⏰</span>
+                  <span className="text-4xl font-black text-gray-900">
+                    {formatTime(timeLeft)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Info Section */}
+              <div className="bg-[#FFD93D]/20 border-4 border-black rounded-2xl p-4">
+                <p className="font-bold text-gray-900 text-center">
+                  {currentSection === "mendengarkan" 
+                    ? "Anda akan melanjutkan ke Seksi II - Merespons Kaidah"
+                    : currentSection === "kaidah"
+                    ? "Anda akan melanjutkan ke Seksi III - Membaca"
+                    : "Anda akan menyelesaikan simulasi ini"
+                  }
+                </p>
+              </div>
+
+              {/* Warning */}
+              <div className="bg-red-50 border-4 border-red-500 rounded-2xl p-4">
+                <p className="text-sm font-black text-red-700 text-center">
+                  ⚠️ Anda tidak dapat kembali ke seksi ini setelah melanjutkan!
+                </p>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowConfirmModal(false)}
+                className="flex-1 px-6 py-3 bg-white border-4 border-black text-gray-900 rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
+              >
+                Batal
+              </button>
+              <button
+                onClick={confirmSectionComplete}
+                className="flex-1 px-6 py-3 bg-[#B5F0C8] border-4 border-black text-gray-900 rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
+              >
+                Ya, Lanjutkan
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
