@@ -13,7 +13,7 @@ export default function Home() {
                 <div className="w-14 h-14 bg-[#FF6B6B] rounded-[20px] rotate-6 flex items-center justify-center border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   <span className="text-white font-black text-2xl -rotate-6">T</span>
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#FFD93D] rounded-full border-3 border-black animate-bounce"></div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#FFD93D] rounded-full border-3 border-black "></div>
               </div>
               <div>
                 <h1 className="text-2xl font-black text-gray-900 tracking-tight">TemanBahasa</h1>
@@ -22,7 +22,7 @@ export default function Home() {
             </div>
 
             {/* Nav Links - Stacked pills */}
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-2 text-gray-700">
               <a href="#tentang" className="px-5 py-2 bg-[#FFF8F0] hover:bg-[#FFE5D0] border-2 border-black rounded-full font-bold text-sm transition-all hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
                 Tentang
               </a>
@@ -35,10 +35,10 @@ export default function Home() {
             </div>
 
             {/* CTA Buttons - Brutalist */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 text-black">
               <Link 
                 href="/auth/login"
-                className="hidden sm:block px-5 py-2 font-black border-2 border-black hover:bg-gray-100 transition-all"
+                className="hidden sm:block px-5 py-2 font-black border-2 border-black hover:bg-gray-100 transition-all rounded-lg"
               >
                 Masuk
               </Link>
@@ -56,7 +56,6 @@ export default function Home() {
       {/* Hero - Chaotic Grid Layout */}
       <section className="pt-16 pb-12 px-6 overflow-hidden relative">
         {/* Background Doodles */}
-        <div className="absolute top-20 left-10 w-32 h-32 border-4 border-[#FFD93D] rounded-full opacity-30 -rotate-12"></div>
         <div className="absolute top-40 right-20 w-24 h-24 bg-[#C7E9FF] border-4 border-black opacity-40 rotate-45"></div>
         <div className="absolute bottom-20 left-1/3 w-16 h-16 bg-[#FFB3D9] border-4 border-black rounded-full opacity-30"></div>
 
@@ -68,8 +67,7 @@ export default function Home() {
               <div className="inline-block">
                 <div className="bg-[#FFD93D] border-4 border-black px-6 py-2 rounded-full shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl">🇮🇩</span>
-                    <span className="font-black text-sm uppercase tracking-wide">Platform UKBI #1</span>
+                    <span className="font-black text-sm uppercase tracking-wide text-gray-600">Platform UKBI #1</span>
                   </div>
                 </div>
               </div>
@@ -79,7 +77,7 @@ export default function Home() {
                 <h2 className="text-6xl lg:text-7xl font-black leading-none text-gray-900">
                   Raih Skor
                 </h2>
-                <div className="relative inline-block">
+                <div className="relative inline-block text-blue-500">
                   <h2 className="text-6xl lg:text-7xl font-black leading-none relative z-10">
                     UKBI
                   </h2>
@@ -108,15 +106,15 @@ export default function Home() {
                   Mulai Latihan Gratis
                   <span className="text-2xl group-hover:rotate-12 transition-transform">→</span>
                 </Link>
-                
-                <button className="px-8 py-4 bg-[#FFD93D] hover:bg-[#FFC107] border-4 border-black font-black text-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all rounded-2xl flex items-center gap-2">
+                 
+                <button className="px-8 py-4 bg-[#FFD93D] hover:bg-[#FFC107] border-4 border-black text-gray-600 font-black text-lg shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all rounded-2xl flex items-center gap-2">
                   <span className="text-2xl">▶</span>
                   Demo
                 </button>
               </div>
 
               {/* Stats - Wonky Grid */}
-              <div className="grid grid-cols-3 gap-4 pt-8">
+              <div className="grid grid-cols-3 gap-4 pt-8 text-gray-600">
                 <div className="bg-[#FFD93D] border-4 border-black p-4 rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rotate-2">
                   <div className="text-4xl font-black">5</div>
                   <div className="text-xs font-bold uppercase">Seksi</div>
@@ -140,14 +138,14 @@ export default function Home() {
                   {/* Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div>
-                      <div className="text-sm font-bold text-gray-500">Halo,</div>
-                      <div className="text-2xl font-black">Budi! 👋</div>
+                      <div className="text-sm font-bold text-gray-800">Halo,</div>
+                      <div className="text-2xl font-black text-gray-800">Budi! 👋</div>
                     </div>
                     <div className="w-12 h-12 bg-[#FF6B6B] border-3 border-black rounded-2xl rotate-6"></div>
                   </div>
 
                   {/* Stats Cards */}
-                  <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="grid grid-cols-2 gap-3 mb-6 text-gray-900">
                     <div className="bg-[#FFD93D] border-3 border-black p-4 rounded-2xl">
                       <div className="text-3xl font-black">450</div>
                       <div className="text-xs font-bold">Skor Max</div>
@@ -159,7 +157,7 @@ export default function Home() {
                   </div>
 
                   {/* Chart - Minimal bars */}
-                  <div className="bg-[#FFF8F0] border-3 border-black p-4 rounded-2xl mb-6">
+                  <div className="bg-[#FFF8F0] border-3 border-black p-4 rounded-2xl mb-6 text-gray-600">
                     <div className="text-xs font-bold mb-3 uppercase">Progress Minggu Ini</div>
                     <div className="flex items-end justify-between gap-2 h-24">
                       {[40, 70, 85, 60, 100, 35, 25].map((height, i) => (
@@ -186,7 +184,7 @@ export default function Home() {
                 </div>
 
                 {/* Floating stickers */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#C7E9FF] border-4 border-black rounded-full flex items-center justify-center font-black text-2xl animate-bounce shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#C7E9FF] border-4 border-black rounded-full flex items-center justify-center font-black text-2xl hover:scale-102 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   ⭐
                 </div>
                 <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#FFD93D] border-4 border-black rounded-full flex items-center justify-center font-black text-xl rotate-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
@@ -199,15 +197,15 @@ export default function Home() {
       </section>
 
       {/* 5 Seksi - Bento Box Style */}
-      <section id="fitur" className="py-16 px-6 bg-white">
+      <section id="fitur" className="py-16 px-6 bg-white text-gray-600">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <div className="inline-block bg-[#FFB3D9] border-4 border-black px-6 py-2 rounded-full shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mb-6 rotate-1">
-              <span className="font-black uppercase tracking-wider">5 Seksi UKBI</span>
+              <span className="font-black uppercase tracking-wider text-gray-800">5 Seksi UKBI</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black mb-4">
-              Yang Harus Kamu<br/>Kuasai! 💪
+            <h2 className="text-5xl lg:text-6xl font-black mb-4 text-gray-800">
+              Yang Harus Kamu<br/>Kuasai! 
             </h2>
           </div>
 
@@ -267,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Paket - Card Stack */}
-      <section id="paket" className="py-16 px-6 bg-[#FFF8F0]">
+      <section id="paket" className="py-16 px-6 bg-[#FFF8F0] text-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-block bg-[#C7E9FF] border-4 border-black px-6 py-2 rounded-full shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mb-6 -rotate-1">
@@ -316,7 +314,7 @@ export default function Home() {
               <h3 className="text-4xl font-black mb-4">Menengah</h3>
               
               <div className="space-y-3 mb-8">
-                {['Semua di Paket 1', 'S4: Menulis', 'AI Review Tulisan', 'Nilai maks. 10 hari'].map((item, i) => (
+                {['Semua di Paket 1', 'S4: Menulis', 'AI Review Tulisan', 'Nilai keluar cepat'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
@@ -342,9 +340,9 @@ export default function Home() {
               <h3 className="text-4xl font-black mb-4">Lengkap</h3>
               
               <div className="space-y-3 mb-8">
-                {['Semua di Paket 2', 'S5: Berbicara', 'AI Analisis Suara', 'Nilai maks. 14 hari', 'Sertifikat UKBI'].map((item, i) => (
+                {['Semua di Paket 2', 'S5: Berbicara', 'AI Analisis Suara', 'Nilai keluar cepat'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span className="font-bold text-sm">{item}</span>
@@ -374,14 +372,14 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-5xl lg:text-7xl font-black text-white mb-6 leading-none">
-            Yuk, Mulai<br/>Sekarang! 🚀
+            Yuk, Mulai<br/>Sekarang! 
           </h2>
           <p className="text-xl font-bold text-white/90 mb-10">
             Ribuan pengguna sudah improve skor UKBI mereka
           </p>
           <Link 
             href="/auth/register"
-            className="inline-block px-12 py-6 bg-[#FFD93D] hover:bg-[#FFC107] border-4 border-black font-black text-2xl shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all rounded-2xl"
+            className="inline-block px-12 py-6 bg-[#FFD93D] hover:bg-[#FFC107] border-4 border-black font-black text-2xl shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all rounded-2xl text-gray-800 hover:text-amber-50"
           >
             Daftar Gratis! →
           </Link>

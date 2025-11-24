@@ -1,7 +1,6 @@
 'use server'
 
 import { createClient } from '@supabase/supabase-js'
-import { cookies } from 'next/headers'
 
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -14,7 +13,6 @@ const supabaseAdmin = createClient(
   }
 )
 
-// Register function (yang sudah ada)
 export async function registerUser(
   email: string, 
   password: string, 
@@ -24,6 +22,7 @@ export async function registerUser(
   try {
     console.log('🔵 Step 1: Creating user in auth.users...')
     
+    // 1. Sign up user
     const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
       email,
       password,
@@ -38,6 +37,7 @@ export async function registerUser(
     console.log('✅ User created:', authData.user.id)
     console.log('🔵 Step 2: Upserting into profiles table...')
 
+    // 2. UPSERT profile (insert atau update kalau sudah ada)
     const { data: profileData, error: profileError } = await supabaseAdmin
       .from('profiles')
       .upsert({
@@ -63,19 +63,17 @@ export async function registerUser(
   }
 }
 
-// ✅ LOGIN FUNCTION (BARU)
 export async function loginUser(email: string, password: string) {
   try {
     console.log('🔵 Attempting login for:', email)
 
-    // Create client-side supabase instance
     const { createClient } = await import('@supabase/supabase-js')
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     )
 
-    // Sign in with Supabase Auth
+    // Sign in
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -85,8 +83,6 @@ export async function loginUser(email: string, password: string) {
       console.error('❌ Login error:', error)
       throw error
     }
-
-    console.log('✅ Login successful:', data.user.id)
 
     // Get user profile
     const { data: profile } = await supabase
@@ -110,7 +106,6 @@ export async function loginUser(email: string, password: string) {
   }
 }
 
-// ✅ LOGOUT FUNCTION (BARU)
 export async function logoutUser() {
   try {
     const { createClient } = await import('@supabase/supabase-js')
