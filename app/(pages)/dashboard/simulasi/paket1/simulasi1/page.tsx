@@ -184,10 +184,10 @@ export default function Simulasi1Page() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-purple-50 to-blue-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#FFF8F0]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Memuat soal...</p>
+          <div className="w-20 h-20 border-4 border-black rounded-full border-t-[#FFD93D] animate-spin mx-auto mb-4"></div>
+          <p className="font-black text-xl text-gray-900">Memuat soal...</p>
         </div>
       </div>
     );
@@ -195,10 +195,10 @@ export default function Simulasi1Page() {
 
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-purple-50 to-blue-50">
+      <div className="min-h-screen flex items-center justify-center bg-[#FFF8F0]">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-purple-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Memuat soal...</p>
+          <div className="w-20 h-20 border-4 border-black rounded-full border-t-[#FFD93D] animate-spin mx-auto mb-4"></div>
+          <p className="font-black text-xl text-gray-900">Memuat soal...</p>
         </div>
       </div>
     );
@@ -207,76 +207,65 @@ export default function Simulasi1Page() {
   if (showResults) {
     const score = calculateScore();
     return (
-      <div className="min-h-screen bg-linear-to-br from-purple-50 to-blue-50 py-12 px-4">
+      <div className="min-h-screen bg-[#FFF8F0] py-12 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-2xl p-8">
+          <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
             <div className="text-center mb-8">
-              <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-12 h-12 text-green-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+              <div className="w-24 h-24 bg-[#B5F0C8] border-4 border-black rounded-full flex items-center justify-center mx-auto mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                <span className="text-5xl">🎉</span>
               </div>
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              <h1 className="text-4xl font-black text-gray-900 mb-2">
                 Tes Selesai!
               </h1>
-              <p className="text-gray-600">
+              <p className="text-lg font-bold text-gray-600">
                 Berikut adalah hasil simulasi Anda
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-purple-50 rounded-xl p-6 text-center">
-                <p className="text-sm text-gray-600 mb-2">Benar</p>
-                <p className="text-4xl font-bold text-purple-600">
+              <div className="bg-[#C7E9FF] border-4 border-black rounded-2xl p-6 text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <p className="text-sm font-bold text-gray-700 mb-2">Benar</p>
+                <p className="text-5xl font-black text-gray-900">
                   {score.correct}
                 </p>
               </div>
-              <div className="bg-blue-50 rounded-xl p-6 text-center">
-                <p className="text-sm text-gray-600 mb-2">Total Soal</p>
-                <p className="text-4xl font-bold text-blue-600">
+              <div className="bg-[#FFD93D] border-4 border-black rounded-2xl p-6 text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <p className="text-sm font-bold text-gray-700 mb-2">Total Soal</p>
+                <p className="text-5xl font-black text-gray-900">
                   {score.total}
                 </p>
               </div>
-              <div className="bg-green-50 rounded-xl p-6 text-center">
-                <p className="text-sm text-gray-600 mb-2">Persentase</p>
-                <p className="text-4xl font-bold text-green-600">
+              <div className="bg-[#B5F0C8] border-4 border-black rounded-2xl p-6 text-center shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <p className="text-sm font-bold text-gray-700 mb-2">Persentase</p>
+                <p className="text-5xl font-black text-gray-900">
                   {score.percentage}%
                 </p>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold text-gray-800">
+              <h2 className="text-2xl font-black text-gray-900 mb-4 flex items-center gap-2">
+                <span>📝</span>
                 Pembahasan Soal
               </h2>
               {questions.map((q, index) => (
                 <div
                   key={q.id}
-                  className={`border-l-4 p-4 rounded ${
+                  className={`border-4 border-black p-5 rounded-2xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${
                     answers[index] === q.correct
-                      ? "border-green-500 bg-green-50"
-                      : "border-red-500 bg-red-50"
+                      ? "bg-[#B5F0C8]"
+                      : "bg-[#FFB3D9]"
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <p className="font-semibold text-gray-800">
+                  <div className="flex items-start justify-between mb-3">
+                    <p className="font-black text-gray-900 text-lg">
                       Soal {index + 1} - {q.section}
                     </p>
                     <span
-                      className={`text-sm font-medium ${
+                      className={`text-sm font-black px-3 py-1 rounded-full border-2 border-black ${
                         answers[index] === q.correct
-                          ? "text-green-600"
-                          : "text-red-600"
+                          ? "bg-white text-green-700"
+                          : "bg-white text-red-700"
                       }`}
                     >
                       {answers[index] === q.correct ? "✓ Benar" : "✗ Salah"}
@@ -307,10 +296,10 @@ export default function Simulasi1Page() {
                       )}
                     </div>
                   )}
-                  <div className="text-sm text-gray-600 mb-2">
+                  <div className="font-bold text-gray-700 mb-3">
                     <p>
                       Jawaban Anda:{" "}
-                      <span className="font-medium">
+                      <span className="font-black">
                         {answers[index] !== null
                           ? String.fromCharCode(65 + answers[index]!)
                           : "Tidak dijawab"}
@@ -318,13 +307,13 @@ export default function Simulasi1Page() {
                     </p>
                     <p>
                       Jawaban Benar:{" "}
-                      <span className="font-medium text-green-600">
+                      <span className="font-black text-green-700">
                         {String.fromCharCode(65 + q.correct)}
                       </span>
                     </p>
                   </div>
-                  <div className="text-sm text-gray-700 bg-white p-3 rounded">
-                    <p className="font-medium mb-1">Pembahasan:</p>
+                  <div className="font-bold text-gray-900 bg-white border-2 border-black p-4 rounded-xl">
+                    <p className="font-black mb-2">💡 Pembahasan:</p>
                     <p>{q.explanation}</p>
                   </div>
                 </div>
@@ -334,13 +323,13 @@ export default function Simulasi1Page() {
             <div className="mt-8 flex gap-4">
               <button
                 onClick={() => router.push("/dashboard/simulasi/paket1")}
-                className="flex-1 px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                className="flex-1 px-6 py-3 bg-[#FF6B6B] border-4 border-black text-white rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
               >
                 Kembali ke Pilihan Simulasi
               </button>
               <button
                 onClick={() => window.location.reload()}
-                className="flex-1 px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                className="flex-1 px-6 py-3 bg-white border-4 border-black text-gray-900 rounded-xl font-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all"
               >
                 Coba Lagi
               </button>
@@ -380,24 +369,24 @@ export default function Simulasi1Page() {
   const membacaInfo = getSectionInfo("membaca");
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FFF8F0]">
       {/* Header */}
-      <div className="bg-white shadow-md sticky top-0 z-40">
+      <div className="bg-white border-b-4 border-black sticky top-0 z-40 shadow-[0px_4px_0px_0px_rgba(0,0,0,1)]">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-bold text-gray-800">
+            <h1 className="text-2xl font-black text-gray-900">
               Simulasi UKBI - Paket 1
             </h1>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm font-bold text-gray-600">
               Seksi {currentSection === "mendengarkan" ? "I" : currentSection === "kaidah" ? "II" : "III"} - {currentSection.charAt(0).toUpperCase() + currentSection.slice(1)}
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <div className="text-right">
-              <p className="text-sm text-gray-600">Waktu Tersisa</p>
+            <div className="text-right bg-[#FFD93D] border-4 border-black rounded-2xl px-6 py-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              <p className="text-xs font-bold text-gray-700">Waktu Tersisa</p>
               <p
-                className={`text-2xl font-bold ${
-                  timeLeft < 300 ? "text-red-600" : "text-purple-600"
+                className={`text-3xl font-black ${
+                  timeLeft < 300 ? "text-[#FF6B6B]" : "text-gray-900"
                 }`}
               >
                 {formatTime(timeLeft)}
@@ -409,22 +398,22 @@ export default function Simulasi1Page() {
 
       <div className="max-w-7xl mx-auto px-4 py-6 flex gap-6">
         {/* Left Sidebar - Section Navigator */}
-        <div className="w-64 space-y-4">
+        <div className="w-64 shrink-0 space-y-4">
           {/* Section 1 - Mendengarkan */}
-          <div className="bg-white rounded-lg shadow-md p-4">
+          <div className="bg-[#C7E9FF] border-4 border-black rounded-2xl p-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-gray-800">Seksi I</h3>
-              <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">
+              <h3 className="font-black text-gray-900">Seksi I</h3>
+              <span className="text-xs bg-white border-2 border-black font-black px-2 py-1 rounded-full">
                 {mendengarkanInfo.count} soal
               </span>
             </div>
-            <p className="text-sm text-gray-600 mb-2">Mendengarkan</p>
-            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+            <p className="text-sm font-bold text-gray-700 mb-3">Mendengarkan</p>
+            <div className="w-full bg-white border-2 border-black rounded-full h-3 mb-2">
               <div
-                className={`h-2 rounded-full transition-all ${
+                className={`h-full rounded-full transition-all border-r-2 border-black ${
                   currentSection === "mendengarkan"
-                    ? "bg-purple-600"
-                    : "bg-green-500"
+                    ? "bg-gray-900"
+                    : "bg-[#B5F0C8]"
                 }`}
                 style={{
                   width: `${
@@ -435,28 +424,28 @@ export default function Simulasi1Page() {
                 }}
               ></div>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs font-bold text-gray-700">
               {answers.slice(mendengarkanInfo.startIndex, mendengarkanInfo.endIndex + 1).filter((a) => a !== null).length}/{mendengarkanInfo.count} terjawab
             </p>
           </div>
 
           {/* Section 2 - Kaidah */}
-          <div className={`bg-white rounded-lg shadow-md p-4 ${
+          <div className={`bg-[#FFD93D] border-4 border-black rounded-2xl p-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
             mendengarkanInfo.endIndex < currentQuestionIndex ? "" : "opacity-50"
           }`}>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-gray-800">Seksi II</h3>
-              <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+              <h3 className="font-black text-gray-900">Seksi II</h3>
+              <span className="text-xs bg-white border-2 border-black font-black px-2 py-1 rounded-full">
                 {kaidahInfo.count} soal
               </span>
             </div>
-            <p className="text-sm text-gray-600 mb-2">Merespons Kaidah</p>
-            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+            <p className="text-sm font-bold text-gray-700 mb-3">Merespons Kaidah</p>
+            <div className="w-full bg-white border-2 border-black rounded-full h-3 mb-2">
               <div
-                className={`h-2 rounded-full transition-all ${
+                className={`h-full rounded-full transition-all border-r-2 border-black ${
                   currentSection === "kaidah"
-                    ? "bg-blue-600"
-                    : "bg-green-500"
+                    ? "bg-gray-900"
+                    : "bg-[#B5F0C8]"
                 }`}
                 style={{
                   width: `${
@@ -467,25 +456,25 @@ export default function Simulasi1Page() {
                 }}
               ></div>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs font-bold text-gray-700">
               {answers.slice(kaidahInfo.startIndex, kaidahInfo.endIndex + 1).filter((a) => a !== null).length}/{kaidahInfo.count} terjawab
             </p>
           </div>
 
           {/* Section 3 - Membaca */}
-          <div className={`bg-white rounded-lg shadow-md p-4 ${
+          <div className={`bg-[#B5F0C8] border-4 border-black rounded-2xl p-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] ${
             kaidahInfo.endIndex < currentQuestionIndex ? "" : "opacity-50"
           }`}>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-gray-800">Seksi III</h3>
-              <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+              <h3 className="font-black text-gray-900">Seksi III</h3>
+              <span className="text-xs bg-white border-2 border-black font-black px-2 py-1 rounded-full">
                 {membacaInfo.count} soal
               </span>
             </div>
-            <p className="text-sm text-gray-600 mb-2">Membaca</p>
-            <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+            <p className="text-sm font-bold text-gray-700 mb-3">Membaca</p>
+            <div className="w-full bg-white border-2 border-black rounded-full h-3 mb-2">
               <div
-                className="bg-green-600 h-2 rounded-full transition-all"
+                className="bg-gray-900 h-full rounded-full transition-all border-r-2 border-black"
                 style={{
                   width: `${
                     (answers.slice(membacaInfo.startIndex, membacaInfo.endIndex + 1).filter((a) => a !== null).length /
@@ -495,7 +484,7 @@ export default function Simulasi1Page() {
                 }}
               ></div>
             </div>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs font-bold text-gray-700">
               {answers.slice(membacaInfo.startIndex, membacaInfo.endIndex + 1).filter((a) => a !== null).length}/{membacaInfo.count} terjawab
             </p>
           </div>
@@ -503,12 +492,12 @@ export default function Simulasi1Page() {
 
         {/* Main Content */}
         <div className="flex-1">
-          <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-            <div className="mb-4 flex items-center justify-between">
-              <span className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+          <div className="bg-white border-4 border-black rounded-3xl p-6 lg:p-8 mb-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="mb-6 flex items-center justify-between">
+              <span className="inline-block px-4 py-2 bg-[#FFD93D] border-2 border-black text-gray-900 rounded-full text-sm font-black">
                 Soal {questionNumberInSection} dari {currentSectionQuestions.length}
               </span>
-              <span className="text-sm text-gray-500">
+              <span className="text-sm font-bold text-gray-600">
                 Total: {currentQuestionIndex + 1}/{questions.length}
               </span>
             </div>
@@ -554,34 +543,34 @@ export default function Simulasi1Page() {
             <div className="mb-6">
               {currentQuestion.section === "kaidah" ? (
                 <div className="space-y-4">
-                  <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="font-semibold text-gray-800 mb-2">
+                  <div className="border-l-4 border-[#C7E9FF] pl-4 bg-[#C7E9FF]/10 p-4 rounded-r-xl">
+                    <p className="font-black text-gray-900 mb-2">
                       Pernyataan X:
                     </p>
-                    <p className="text-gray-700 mb-3">
+                    <p className="text-gray-700 font-bold mb-3">
                       {currentQuestion.statementX}
                     </p>
                     {currentQuestion.optionsX && (
                       <div className="space-y-1 ml-4">
                         {currentQuestion.optionsX.map((option, index) => (
-                          <p key={index} className="text-gray-600 text-sm">
+                          <p key={index} className="text-gray-600 font-bold text-sm">
                             ({String.fromCharCode(65 + index)}) {option}
                           </p>
                         ))}
                       </div>
                     )}
                   </div>
-                  <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="font-semibold text-gray-800 mb-2">
+                  <div className="border-l-4 border-[#FFD93D] pl-4 bg-[#FFD93D]/10 p-4 rounded-r-xl">
+                    <p className="font-black text-gray-900 mb-2">
                       Pernyataan Y:
                     </p>
-                    <p className="text-gray-700 mb-3">
+                    <p className="text-gray-700 font-bold mb-3">
                       {currentQuestion.statementY}
                     </p>
                     {currentQuestion.optionsY && (
                       <div className="space-y-1 ml-4">
                         {currentQuestion.optionsY.map((option, index) => (
-                          <p key={index} className="text-gray-600 text-sm">
+                          <p key={index} className="text-gray-600 font-bold text-sm">
                             ({String.fromCharCode(65 + index)}) {option}
                           </p>
                         ))}
@@ -590,7 +579,7 @@ export default function Simulasi1Page() {
                   </div>
                 </div>
               ) : (
-                <p className="text-lg text-gray-800 font-medium">
+                <p className="text-xl text-gray-900 font-black">
                   {currentQuestion.question}
                 </p>
               )}
@@ -602,23 +591,23 @@ export default function Simulasi1Page() {
                 <button
                   key={index}
                   onClick={() => handleAnswer(index)}
-                  className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                  className={`w-full text-left p-4 rounded-xl border-4 border-black transition-all font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 ${
                     answers[currentQuestionIndex] === index
-                      ? "border-purple-600 bg-purple-50"
-                      : "border-gray-200 hover:border-purple-300 hover:bg-gray-50"
+                      ? "bg-[#FFD93D]"
+                      : "bg-white"
                   }`}
                 >
                   <div className="flex items-start gap-3">
                     <div
-                      className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-semibold ${
+                      className={`shrink-0 w-10 h-10 rounded-full border-2 border-black flex items-center justify-center font-black ${
                         answers[currentQuestionIndex] === index
-                          ? "bg-purple-600 text-white"
-                          : "bg-gray-200 text-gray-700"
+                          ? "bg-gray-900 text-white"
+                          : "bg-white text-gray-900"
                       }`}
                     >
                       {String.fromCharCode(65 + index)}
                     </div>
-                    <p className="flex-1 text-gray-700 pt-1">{option}</p>
+                    <p className="flex-1 text-gray-900 pt-1.5">{option}</p>
                   </div>
                 </button>
               ))}
@@ -630,7 +619,7 @@ export default function Simulasi1Page() {
             <button
               onClick={handlePrevious}
               disabled={currentQuestionIndex === currentSectionStartIndex}
-              className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-3 bg-white border-4 border-black text-gray-900 rounded-xl font-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               ← Sebelumnya
             </button>
@@ -639,7 +628,7 @@ export default function Simulasi1Page() {
             currentSectionStartIndex + currentSectionQuestions.length - 1 ? (
               <button
                 onClick={handleSectionComplete}
-                className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                className="px-6 py-3 bg-[#B5F0C8] border-4 border-black text-gray-900 rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all"
               >
                 {currentSection === "membaca"
                   ? "Selesai"
@@ -649,7 +638,7 @@ export default function Simulasi1Page() {
               <button
                 onClick={handleNext}
                 disabled={currentQuestionIndex === currentSectionStartIndex + currentSectionQuestions.length - 1}
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="px-6 py-3 bg-[#FF6B6B] border-4 border-black text-white rounded-xl font-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
               >
                 Selanjutnya →
               </button>
@@ -658,46 +647,48 @@ export default function Simulasi1Page() {
         </div>
 
         {/* Right Sidebar - Question Numbers */}
-        <div className="w-48 bg-white rounded-lg shadow-md p-4 h-fit sticky top-24">
-          <h3 className="font-semibold text-gray-800 mb-3 text-sm">Navigasi Soal</h3>
-          <div className="grid grid-cols-4 gap-2">
-            {currentSectionQuestions.map((q, idx) => {
-              const absoluteIndex = currentSectionStartIndex + idx;
-              const isAnswered = answers[absoluteIndex] !== null;
-              const isCurrent = absoluteIndex === currentQuestionIndex;
-              const displayNumber = idx + 1; // Reset numbering per section
+        <div className="w-72 shrink-0">
+          <div className="bg-white border-4 border-black rounded-3xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] sticky top-24">
+            <h3 className="font-black text-gray-900 mb-4 text-lg">Navigasi Soal</h3>
+            <div className="grid grid-cols-4 gap-2">
+              {currentSectionQuestions.map((q, idx) => {
+                const absoluteIndex = currentSectionStartIndex + idx;
+                const isAnswered = answers[absoluteIndex] !== null;
+                const isCurrent = absoluteIndex === currentQuestionIndex;
+                const displayNumber = idx + 1; // Reset numbering per section
 
-              return (
-                <button
-                  key={q.id}
-                  onClick={() => setCurrentQuestionIndex(absoluteIndex)}
-                  className={`aspect-square rounded-lg text-sm font-medium transition-colors ${
-                    isCurrent
-                      ? "bg-purple-600 text-white"
-                      : isAnswered
-                      ? "bg-green-100 text-green-700 hover:bg-green-200"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                  }`}
-                >
-                  {displayNumber}
+                return (
+                  <button
+                    key={q.id}
+                    onClick={() => setCurrentQuestionIndex(absoluteIndex)}
+                    className={`aspect-square rounded-xl border-2 border-black text-sm font-black transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 ${
+                      isCurrent
+                        ? "bg-[#FFD93D] text-gray-900"
+                        : isAnswered
+                        ? "bg-[#B5F0C8] text-gray-900"
+                        : "bg-white text-gray-900"
+                    }`}
+                  >
+                    {displayNumber}
                 </button>
               );
             })}
           </div>
-          <div className="mt-4 space-y-2 text-xs">
+          <div className="mt-6 space-y-3 text-sm font-bold">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-purple-600 rounded"></div>
+              <div className="w-6 h-6 bg-[#FFD93D] border-2 border-black rounded-lg"></div>
               <span>Aktif</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-green-100 border border-green-700 rounded"></div>
+              <div className="w-6 h-6 bg-[#B5F0C8] border-2 border-black rounded-lg"></div>
               <span>Terjawab</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 bg-gray-100 border border-gray-700 rounded"></div>
+              <div className="w-6 h-6 bg-white border-2 border-black rounded-lg"></div>
               <span>Belum</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
