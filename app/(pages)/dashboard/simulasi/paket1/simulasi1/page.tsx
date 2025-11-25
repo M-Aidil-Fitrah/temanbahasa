@@ -20,6 +20,8 @@ interface Question {
 }
 
 export default function Simulasi1Page() {
+    if (typeof window === "undefined") return null; // ⬅️ FIX UTAMA
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const [questions, setQuestions] = useState<Question[]>([]);

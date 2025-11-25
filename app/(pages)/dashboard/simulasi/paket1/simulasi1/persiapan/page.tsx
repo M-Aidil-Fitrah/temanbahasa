@@ -78,6 +78,8 @@ const sectionInfoMap: Record<string, SectionInfo> = {
 };
 
 export default function PersiapanPage() {
+    if (typeof window === "undefined") return null; // ⬅️ FIX UTAMA
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const sectionParam = searchParams.get("section") || "mendengarkan";

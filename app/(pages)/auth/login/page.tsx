@@ -5,6 +5,8 @@ import { supabase } from "@/lib/supabase/client"; // ← Pakai client langsung
 import Link from "next/link";
 
 export default function Login() {
+  if (typeof window === "undefined") return null; // ⬅️ FIX UTAMA
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
