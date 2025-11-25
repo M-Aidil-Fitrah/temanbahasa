@@ -1,0 +1,135 @@
+import { SoalMeresponKaedah } from '@/lib/types';
+
+const soalMerespon: SoalMeresponKaedah[] = [
+  {
+    "id": 21,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Laporan yang kamu berikan tadi pagi terasa sangat **ambigu**.",
+    "kata_x": "ambigu",
+    "opsi_x": ["jelas", "ganda"],
+    "dialog_y": "Y: Saya akan membuatnya lebih **terperinci** agar tidak ada kesalahpahaman.",
+    "kata_y": "terperinci",
+    "opsi_y": ["global", "detail"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'ambigu' (bermakna tidak jelas atau bermakna ganda) adalah 'ganda' (B)."
+  },
+  {
+    "id": 22,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Perekonomian negara ini menunjukkan pertumbuhan yang **stabil** selama tiga kuartal terakhir.",
+    "kata_x": "stabil",
+    "opsi_x": ["dinamis", "ajek"],
+    "dialog_y": "Y: Itu menghilangkan kekhawatiran tentang adanya **resesi** ekonomi.",
+    "kata_y": "resesi",
+    "opsi_y": ["kemakmuran", "kemerosotan"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'stabil' (bermakna ajek/mantap) adalah 'ajek' (B)."
+  },
+  {
+    "id": 23,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Keputusan rapat tadi pagi terdengar sangat **eksklusif**.",
+    "kata_x": "eksklusif",
+    "opsi_x": ["terbatas", "inklusif"],
+    "dialog_y": "Y: Ya, padahal kita berharap keputusan itu bersifat **terbuka** untuk semua pihak.",
+    "kata_y": "terbuka",
+    "opsi_y": ["transparan", "tertutup"],
+    "jawaban_benar": "A",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'eksklusif' (bermakna terbatas pada kelompok tertentu) adalah 'terbatas' (A)."
+  },
+  {
+    "id": 24,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Pertemuan kali ini harus menghasilkan kesepakatan yang **komprehensif**.",
+    "kata_x": "komprehensif",
+    "opsi_x": ["menyeluruh", "sepotong"],
+    "dialog_y": "Y: Saya harap kita tidak hanya membahas hal-hal yang **trivial**.",
+    "kata_y": "trivial",
+    "opsi_y": ["remeh", "penting"],
+    "jawaban_benar": "A",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'komprehensif' (bermakna meliputi banyak hal) adalah 'menyeluruh' (A)."
+  },
+  {
+    "id": 25,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Proyek pembangunan ini menghadapi hambatan yang cukup **signifikan**.",
+    "kata_x": "signifikan",
+    "opsi_x": ["kecil", "berarti"],
+    "dialog_y": "Y: Apa yang menyebabkan **penundaan** jadwal pengerjaan ini?",
+    "kata_y": "penundaan",
+    "opsi_y": ["percepatan", "pengunduran"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'signifikan' (bermakna penting/berarti) adalah 'berarti' (B)."
+  },
+  {
+    "id": 26,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Kehadiran teknologi baru itu dianggap sebagai **anomali** di pasar.",
+    "kata_x": "anomali",
+    "opsi_x": ["kebiasaan", "penyimpangan"],
+    "dialog_y": "Y: Ya, karena berbeda dari semua produk **konvensional** yang ada.",
+    "kata_y": "konvensional",
+    "opsi_y": ["tradisional", "modern"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'anomali' (bermakna penyimpangan dari keadaan normal) adalah 'penyimpangan' (B)."
+  },
+  {
+    "id": 27,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Hasil negosiasi antara kedua negara itu berakhir tanpa **konsensus**.",
+    "kata_x": "konsensus",
+    "opsi_x": ["pertentangan", "kesepakatan"],
+    "dialog_y": "Y: Artinya, mereka gagal mencapai **mufakat** bersama.",
+    "kata_y": "mufakat",
+    "opsi_y": ["perselisihan", "persetujuan"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'konsensus' adalah 'kesepakatan' (B)."
+  },
+  {
+    "id": 28,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Laporan media tentang peristiwa itu tampak sangat **bias**.",
+    "kata_x": "bias",
+    "opsi_x": ["objektif", "condong"],
+    "dialog_y": "Y: Itu terjadi karena media hanya menampilkan sudut pandang yang **parsial**.",
+    "kata_y": "parsial",
+    "opsi_y": ["sebagian", "utuh"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'bias' (bermakna cenderung pada satu sisi) adalah 'condong' (B)."
+  },
+  {
+    "id": 29,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Kita perlu segera menemukan solusi yang **efektif** untuk masalah sampah ini.",
+    "kata_x": "efektif",
+    "opsi_x": ["berdaya guna", "sia-sia"],
+    "dialog_y": "Y: Ya, jangan sampai kita hanya melakukan upaya yang **futuristik**.",
+    "kata_y": "futuristik",
+    "opsi_y": ["kuno", "modern"],
+    "jawaban_benar": "A",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'efektif' (bermakna berhasil mencapai tujuan) adalah 'berdaya guna' (A)."
+  },
+  {
+    "id": 30,
+    "seksi": "seksi-dua-meresponkaedah",
+    "tingkat_kesulitan": "menengah",
+    "dialog_x": "X: Data yang kita peroleh bersifat **sementara** dan bisa berubah.",
+    "kata_x": "sementara",
+    "opsi_x": ["permanen", "temporer"],
+    "dialog_y": "Y: Itu berarti kita tidak boleh mengambil kesimpulan yang **definitif** sekarang.",
+    "kata_y": "definitif",
+    "opsi_y": ["pasti", "fleksibel"],
+    "jawaban_benar": "B",
+    "pembahasan": "Padanan kata (sinonim) yang paling tepat untuk 'sementara' adalah 'temporer' (B)."
+  }
+];
+export default soalMerespon;
