@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function CheckoutPage() {
+  if (typeof window === "undefined") return null; // ⬅️ FIX UTAMA
+
   const searchParams = useSearchParams();
   const router = useRouter();
   const packageId = searchParams.get('package');

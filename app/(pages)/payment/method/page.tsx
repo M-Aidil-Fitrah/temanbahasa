@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function PaymentMethodPage() {
+    if (typeof window === "undefined") return null; // ⬅️ FIX UTAMA
+
   const searchParams = useSearchParams();
   const router = useRouter();
   const packageId = searchParams.get('package');
