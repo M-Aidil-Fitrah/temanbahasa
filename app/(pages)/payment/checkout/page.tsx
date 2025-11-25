@@ -206,7 +206,7 @@ export default function CheckoutPage() {
               <div className="space-y-4">
                 {selectedMethod.instructions.map((instruction: string, i: number) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-[#FFD93D] border-2 border-black rounded-full flex items-center justify-center font-black text-sm flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 bg-[#FFD93D] border-2 border-black rounded-full flex items-center justify-center font-black text-sm shrink-0 mt-0.5">
                       {i + 1}
                     </div>
                     <p className="font-bold text-sm">{instruction}</p>

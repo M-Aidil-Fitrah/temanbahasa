@@ -99,7 +99,7 @@ export default function PricingPage() {
                 <div className="space-y-3 mb-8">
                   {pkg.features.map((feature, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-5 h-5 bg-black rounded-full flex items-center justify-center shrink-0 mt-0.5">
                         <span className="text-white text-xs">✓</span>
                       </div>
                       <span className="font-bold text-sm">{feature}</span>
