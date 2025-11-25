@@ -275,113 +275,18 @@ export default function Home() {
       </h2>
     </div>
 
-      {/* Paket - Card Stack */}
-      <section id="paket" className="py-16 px-6 bg-[#FFF8F0] text-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-[#C7E9FF] border-4 border-black px-6 py-2 rounded-full shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mb-6 -rotate-1">
-              <span className="font-black uppercase tracking-wider">Pilih Paket</span>
-            </div>
-            <h2 className="text-5xl lg:text-6xl font-black mb-4">
-              3 Paket Simulasi<br/>UKBI 🎯
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Paket 1 */}
-            <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-all">
-              <div className="bg-[#C7E9FF] border-3 border-black px-4 py-2 rounded-full inline-block mb-6 font-black text-sm">
-                PAKET 1
-              </div>
-              <h3 className="text-4xl font-black mb-4">Dasar</h3>
-              
-              <div className="space-y-3 mb-8">
-                {['S1: Mendengarkan', 'S2: Merespons Kaidah', 'S3: Membaca', 'Skor Langsung'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="font-bold text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Link 
-                href="/auth/register"
-                className="block text-center bg-[#C7E9FF] hover:bg-[#A5D8FF] border-4 border-black px-6 py-3 rounded-xl font-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
-              >
-                Pilih Paket 1
-              </Link>
-            </div>
-
-            {/* Paket 2 - Featured */}
-            <div className="relative bg-[#FFD93D] border-4 border-black rounded-3xl p-8 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-all -rotate-1">
-              <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#FF6B6B] border-4 border-black px-6 py-2 rounded-full font-black text-sm shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] whitespace-nowrap">
-                ⭐ POPULER
-              </div>
-              <div className="bg-white border-3 border-black px-4 py-2 rounded-full inline-block mb-6 font-black text-sm mt-4">
-                PAKET 2
-              </div>
-              <h3 className="text-4xl font-black mb-4">Menengah</h3>
-              
-              <div className="space-y-3 mb-8">
-                {['Semua di Paket 1', 'S4: Menulis', 'AI Review Tulisan', 'Nilai keluar cepat'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="font-bold text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Link 
-                href="/auth/register"
-                className="block text-center bg-[#FF6B6B] hover:bg-[#FF5252] border-4 border-black px-6 py-3 rounded-xl font-black text-white shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
-              >
-                Pilih Paket 2 →
-              </Link>
-            </div>
-
-            {/* Paket 3 */}
-            <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-all">
-              <div className="bg-[#FFB3D9] border-3 border-black px-4 py-2 rounded-full inline-block mb-6 font-black text-sm">
-                PAKET 3
-              </div>
-              <h3 className="text-4xl font-black mb-4">Lengkap</h3>
-              
-              <div className="space-y-3 mb-8">
-                {['Semua di Paket 2', 'S5: Berbicara', 'AI Analisis Suara', 'Nilai keluar cepat'].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span className="font-bold text-sm">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <Link 
-                href="/auth/register"
-                className="block text-center bg-[#FFB3D9] hover:bg-[#FF9CC5] border-4 border-black px-6 py-3 rounded-xl font-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 transition-all"
-              >
-                Pilih Paket 3
-              </Link>
-            </div>
-          </div>
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Paket 1 */}
+      <div className="bg-white border-4 border-black rounded-3xl p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 transition-all">
+        <div className="bg-[#C7E9FF] border-3 border-black px-4 py-2 rounded-full inline-block mb-6 font-black text-sm">
+          PAKET 1
         </div>
-        <h3 className="text-4xl font-black mb-4">Rp 13.000</h3>
+        <h3 className="text-4xl font-black mb-4">Dasar</h3>
         
         <div className="space-y-3 mb-8">
-          {[
-            '20 Latihan bebas',
-            'S1, S2, S3, S4',
-            '#S5 coming soon',
-            'Analisis Otomatis',
-            'Progress Tracking'
-          ].map((item, i) => (
+          {['S1: Mendengarkan', 'S2: Merespons Kaidah', 'S3: Membaca', 'Skor Langsung'].map((item, i) => (
             <div key={i} className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                 <span className="text-white text-xs">✓</span>
               </div>
               <span className="font-bold text-sm">{item}</span>
@@ -405,19 +310,12 @@ export default function Home() {
         <div className="bg-white border-3 border-black px-4 py-2 rounded-full inline-block mb-6 font-black text-sm mt-4">
           PAKET 2
         </div>
-        <h3 className="text-4xl font-black mb-4">Rp 15.000</h3>
+        <h3 className="text-4xl font-black mb-4">Menengah</h3>
         
         <div className="space-y-3 mb-8">
-          {[
-            '20 Latihan bebas',
-            'S1, S2, S3, S4',
-            '#S5 coming soon',
-            'Analisis Otomatis',
-            'Progress Tracking',
-            '2x Simulasi Ujian'
-          ].map((item, i) => (
+          {['Semua di Paket 1', 'S4: Menulis', 'AI Review Tulisan', 'Nilai keluar cepat'].map((item, i) => (
             <div key={i} className="flex items-center gap-3">
-              <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                 <span className="text-white text-xs">✓</span>
               </div>
               <span className="font-bold text-sm">{item}</span>
@@ -438,17 +336,10 @@ export default function Home() {
         <div className="bg-[#FFB3D9] border-3 border-black px-4 py-2 rounded-full inline-block mb-6 font-black text-sm">
           PAKET 3
         </div>
-        <h3 className="text-4xl font-black mb-4">Rp 17.000</h3>
+        <h3 className="text-4xl font-black mb-4">Lengkap</h3>
         
         <div className="space-y-3 mb-8">
-          {[
-            '25 Latihan bebas',
-            'S1, S2, S3, S4',
-            '#S5 coming soon',
-            'Analisis Otomatis',
-            'Progress Tracking',
-            '5x Simulasi Ujian'
-          ].map((item, i) => (
+          {['Semua di Paket 2', 'S5: Berbicara', 'AI Analisis Suara', 'Nilai keluar cepat'].map((item, i) => (
             <div key={i} className="flex items-center gap-3">
               <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center shrink-0">
                 <span className="text-white text-xs">✓</span>
